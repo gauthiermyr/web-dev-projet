@@ -22,7 +22,45 @@ SET time_zone = "+00:00";
 -- Base de données :  `siteweb`
 --
 
+
 -- --------------------------------------------------------
+
+--
+-- Structure de la table `typedutilisateurs`
+--
+
+DROP TABLE IF EXISTS `typedutilisateurs`;
+CREATE TABLE IF NOT EXISTS `typedutilisateurs` (
+  `IDTypeutilisateur` int(255) AUTO_INCREMENT,
+  `libelle` varchar(255) COLLATE utf8_unicode_ci,
+  PRIMARY KEY (`IDTypeutilisateur`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+
+-- --------------------------------------------------------
+
+
+--
+-- Structure de la table `utilisateurs`
+--
+
+DROP TABLE IF EXISTS `utilisateurs`;
+CREATE TABLE IF NOT EXISTS `utilisateurs` (
+  `IDUtilisateur` int(255) AUTO_INCREMENT,
+  `Nom` varchar(255) COLLATE utf8_unicode_ci,
+  `Prenom` varchar(255) COLLATE utf8_unicode_ci,
+  `DateDeNaissance` date,
+  `User` varchar(255) COLLATE utf8_unicode_ci,
+  `Password` varchar(255) COLLATE utf8_unicode_ci,
+  `Email` varchar(255) COLLATE utf8_unicode_ci,
+  `2FA` varchar(100) COLLATE utf8_unicode_ci,
+  `Telephone` int(10),
+  `IDTypeUtilisateur` int(255),
+  `Photo` varchar(255) COLLATE utf8_unicode_ci,
+  PRIMARY KEY (`IDUtilisateur`),
+  FOREIGN KEY(IDTypeutilisateur) references typedutilisateurs(IDTypeutilisateur) ON DELETE CASCADE
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+COMMIT;
 
 --
 -- Structure de la table `actualites`
@@ -30,16 +68,17 @@ SET time_zone = "+00:00";
 
 DROP TABLE IF EXISTS `actualites`;
 CREATE TABLE IF NOT EXISTS `actualites` (
-  `IDActu` int(255) NOT NULL AUTO_INCREMENT,
-  `Titre` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
-  `Commentaire` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
-  `DatePublication` date NOT NULL,
-  `Publique` tinyint(1) NOT NULL,
-  `DateSaisie` date NOT NULL,
-  `IP` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
-  `ValideeParModerateur` tinyint(1) NOT NULL,
-  `IDUtilisateur` int(255) NOT NULL,
-  PRIMARY KEY (`IDActu`)
+  `IDActu` int(255) AUTO_INCREMENT,
+  `Titre` varchar(255) COLLATE utf8_unicode_ci,
+  `Commentaire` varchar(255) COLLATE utf8_unicode_ci,
+  `DatePublication` date,
+  `Publique` tinyint(1),
+  `DateSaisie` date,
+  `IP` varchar(255) COLLATE utf8_unicode_ci,
+  `ValideeParModerateur` tinyint(1),
+  `IDUtilisateur` int(255),
+  PRIMARY KEY (`IDActu`),
+  FOREIGN KEY(IDUtilisateur) references utilisateurs(IDUtilisateur) ON DELETE CASCADE
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 -- --------------------------------------------------------
@@ -50,9 +89,11 @@ CREATE TABLE IF NOT EXISTS `actualites` (
 
 DROP TABLE IF EXISTS `contacts`;
 CREATE TABLE IF NOT EXISTS `contacts` (
-  `IDUtilisateur0` int(255) NOT NULL,
-  `IDUtilisateur1` int(255) NOT NULL,
-  PRIMARY KEY (`IDUtilisateur0`,`IDUtilisateur1`)
+  `IDUtilisateur0` int(255),
+  `IDUtilisateur1` int(255),
+  PRIMARY KEY (`IDUtilisateur0`,`IDUtilisateur1`),
+  FOREIGN KEY(IDUtilisateur0) references utilisateurs(IDUtilisateur) ON DELETE CASCADE,
+  FOREIGN KEY(IDUtilisateur1) references utilisateurs(IDUtilisateur) ON DELETE CASCADE
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 -- --------------------------------------------------------
@@ -63,18 +104,35 @@ CREATE TABLE IF NOT EXISTS `contacts` (
 
 DROP TABLE IF EXISTS `entreprise`;
 CREATE TABLE IF NOT EXISTS `entreprise` (
-  `IDEntreprise` int(255) NOT NULL AUTO_INCREMENT,
-  `RaisonSocial` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
-  `SIREN` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
-  `SIRET` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
-  `IDUtilisateur` int(255) NOT NULL,
-  `Adresse` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
-  `Commentaire` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
-  `SiteWeb` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
-  `EmailDeContact` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
-  `Logo` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
-  PRIMARY KEY (`IDEntreprise`)
+  `IDEntreprise` int(255) AUTO_INCREMENT,
+  `RaisonSocial` varchar(255) COLLATE utf8_unicode_ci,
+  `SIREN` varchar(255) COLLATE utf8_unicode_ci,
+  `SIRET` varchar(255) COLLATE utf8_unicode_ci,
+  `IDUtilisateur` int(255),
+  `Adresse` varchar(255) COLLATE utf8_unicode_ci,
+  `Commentaire` varchar(255) COLLATE utf8_unicode_ci,
+  `SiteWeb` varchar(255) COLLATE utf8_unicode_ci,
+  `EmailDeContact` varchar(255) COLLATE utf8_unicode_ci,
+  `Logo` varchar(255) COLLATE utf8_unicode_ci,
+  PRIMARY KEY (`IDEntreprise`),
+  FOREIGN KEY(IDUtilisateur) references utilisateurs(IDUtilisateur) ON DELETE CASCADE
+
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `typesdexperiences`
+--
+
+DROP TABLE IF EXISTS `typesdexperiences`;
+CREATE TABLE IF NOT EXISTS `typesdexperiences` (
+  `IDTypeExperience` int(255) AUTO_INCREMENT,
+  `Type` varchar(255) COLLATE utf8_unicode_ci,
+  PRIMARY KEY (`IDTypeExp`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
 
 -- --------------------------------------------------------
 
@@ -84,14 +142,16 @@ CREATE TABLE IF NOT EXISTS `entreprise` (
 
 DROP TABLE IF EXISTS `experiences`;
 CREATE TABLE IF NOT EXISTS `experiences` (
-  `IDutilisateur` int(255) NOT NULL,
-  `RaisonSocialEntreprise` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
-  `DateDebut` date NOT NULL,
-  `DateFin` date NOT NULL,
-  `CommentairePublic` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
-  `IDTypeExperience` int(255) NOT NULL,
-  `DateSaisie` date NOT NULL,
-  `IPSaisie` varchar(255) COLLATE utf8_unicode_ci NOT NULL
+  `IDutilisateur` int(255),
+  `RaisonSocialEntreprise` varchar(255) COLLATE utf8_unicode_ci,
+  `DateDebut` date,
+  `DateFin` date,
+  `CommentairePublic` varchar(255) COLLATE utf8_unicode_ci,
+  `IDTypeExperience` int(255),
+  `DateSaisie` date,
+  `IPSaisie` varchar(255) COLLATE utf8_unicode_ci,
+  FOREIGN KEY(IDUtilisateur) references utilisateurs(IDUtilisateur) ON DELETE CASCADE,
+  FOREIGN KEY(IDTypeExperience) references typesdexperiences(IDTypeExperience) ON DELETE CASCADE
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 -- --------------------------------------------------------
@@ -102,10 +162,10 @@ CREATE TABLE IF NOT EXISTS `experiences` (
 
 DROP TABLE IF EXISTS `logconnexions`;
 CREATE TABLE IF NOT EXISTS `logconnexions` (
-  `utilisateur` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
-  `IP` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
-  `date` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
-  `ConnexionOKouPAS` varchar(255) COLLATE utf8_unicode_ci NOT NULL
+  `utilisateur` varchar(255) COLLATE utf8_unicode_ci,
+  `IP` varchar(255) COLLATE utf8_unicode_ci,
+  `date` varchar(255) COLLATE utf8_unicode_ci,
+  `ConnexionOKouPAS` varchar(255) COLLATE utf8_unicode_ci
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 -- --------------------------------------------------------
@@ -116,68 +176,17 @@ CREATE TABLE IF NOT EXISTS `logconnexions` (
 
 DROP TABLE IF EXISTS `message`;
 CREATE TABLE IF NOT EXISTS `message` (
-  `IDUtilisateurEmetteur` int(255) NOT NULL,
-  `IDUtilisateurDestinataire` int(255) NOT NULL,
-  `Message` mediumtext COLLATE utf8_unicode_ci NOT NULL,
-  `DateDEnvoi` date NOT NULL,
-  `DateDeLecture` date NOT NULL,
-  `IPDEnvoi` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
-  `DateServerEnvoi` date NOT NULL,
-  `IPDeLecture` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
-  `DateServerLecture` date NOT NULL
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
-
--- --------------------------------------------------------
-
---
--- Structure de la table `offresdemploie`
---
-
-DROP TABLE IF EXISTS `offresdemploie`;
-CREATE TABLE IF NOT EXISTS `offresdemploie` (
-  `IDOffre` int(255) NOT NULL AUTO_INCREMENT,
-  `IDEntreprise` int(255) NOT NULL,
-  `titre` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
-  `commentaire` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
-  `DatePublication` date NOT NULL,
-  `IDTypeContact` int(255) NOT NULL,
-  `Salaire` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
-  `IDUtilisateurAvantSaisie` int(255) NOT NULL,
-  `IPSaisie` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
-  `DateDeSaisie` date NOT NULL,
-  `ValideeParModerateur` tinyint(1) NOT NULL,
-  PRIMARY KEY (`IDOffre`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
-
--- --------------------------------------------------------
-
---
--- Structure de la table `pagedusite`
---
-
-DROP TABLE IF EXISTS `pagedusite`;
-CREATE TABLE IF NOT EXISTS `pagedusite` (
-  `ID` int(255) NOT NULL,
-  `titre` varchar(100) COLLATE utf8_unicode_ci NOT NULL,
-  `contenu` mediumtext COLLATE utf8_unicode_ci NOT NULL
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
-
--- --------------------------------------------------------
-
---
--- Structure de la table `publicites`
---
-
-DROP TABLE IF EXISTS `publicites`;
-CREATE TABLE IF NOT EXISTS `publicites` (
-  `IDutilisateur` int(255) NOT NULL,
-  `titre` varchar(100) COLLATE utf8_unicode_ci NOT NULL,
-  `texte` mediumtext COLLATE utf8_unicode_ci NOT NULL,
-  `photo` varchar(100) COLLATE utf8_unicode_ci NOT NULL,
-  `IPsaisie` varchar(100) COLLATE utf8_unicode_ci NOT NULL,
-  `DateSaisie` date NOT NULL,
-  `ValideeParModerateur` tinyint(1) NOT NULL,
-  `MoyenDePamentUtilise` varchar(255) COLLATE utf8_unicode_ci NOT NULL
+  `IDUtilisateurEmetteur` int(255),
+  `IDUtilisateurDestinataire` int(255),
+  `Message` mediumtext COLLATE utf8_unicode_ci,
+  `DateDEnvoi` date,
+  `DateDeLecture` date,
+  `IPDEnvoi` varchar(255) COLLATE utf8_unicode_ci,
+  `DateServerEnvoi` date,
+  `IPDeLecture` varchar(255) COLLATE utf8_unicode_ci,
+  `DateServerLecture` date,
+  FOREIGN KEY(IDUtilisateurEmetteur) references utilisateurs(IDUtilisateur) ON DELETE CASCADE,
+  FOREIGN KEY(IDUtilisateurDestinataire) references utilisateurs(IDUtilisateur) ON DELETE CASCADE
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 -- --------------------------------------------------------
@@ -188,59 +197,70 @@ CREATE TABLE IF NOT EXISTS `publicites` (
 
 DROP TABLE IF EXISTS `typedecontrat`;
 CREATE TABLE IF NOT EXISTS `typedecontrat` (
-  `IDContrat` int(255) NOT NULL AUTO_INCREMENT,
-  `libelle` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `IDTypeContrat` int(255) AUTO_INCREMENT,
+  `libelle` varchar(255) COLLATE utf8_unicode_ci,
   PRIMARY KEY (`IDContrat`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 -- --------------------------------------------------------
 
 --
--- Structure de la table `typedutilisateurs`
+-- Structure de la table `offresdemploie`
 --
 
-DROP TABLE IF EXISTS `typedutilisateurs`;
-CREATE TABLE IF NOT EXISTS `typedutilisateurs` (
-  `IDTypeutilisateur` int(255) NOT NULL AUTO_INCREMENT,
-  `libelle` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
-  PRIMARY KEY (`IDTypeutilisateur`)
+DROP TABLE IF EXISTS `offresdemploie`;
+CREATE TABLE IF NOT EXISTS `offresdemploie` (
+  `IDOffre` int(255) AUTO_INCREMENT,
+  `IDEntreprise` int(255),
+  `titre` varchar(255) COLLATE utf8_unicode_ci,
+  `commentaire` varchar(255) COLLATE utf8_unicode_ci,
+  `DatePublication` date,
+  `IDTypeContrat` int(255),
+  `Salaire` varchar(255) COLLATE utf8_unicode_ci,
+  `IDUtilisateurAvantSaisie` int(255),
+  `IPSaisie` varchar(255) COLLATE utf8_unicode_ci,
+  `DateDeSaisie` date,
+  `ValideeParModerateur` tinyint(1),
+  PRIMARY KEY (`IDOffre`),
+  FOREIGN KEY(IDEntreprise) references entreprise(IDEntreprise) ON DELETE CASCADE,
+  FOREIGN KEY(IDTypeContrat) references typedecontrat(IDTypeContrat) ON DELETE CASCADE,
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 -- --------------------------------------------------------
 
 --
--- Structure de la table `typesdexperiences`
+-- Structure de la table `pagedusite`
 --
 
-DROP TABLE IF EXISTS `typesdexperiences`;
-CREATE TABLE IF NOT EXISTS `typesdexperiences` (
-  `IDTypeExp` int(255) NOT NULL AUTO_INCREMENT,
-  `Type` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
-  PRIMARY KEY (`IDTypeExp`)
+DROP TABLE IF EXISTS `pagedusite`;
+CREATE TABLE IF NOT EXISTS `pagedusite` (
+  `ID` int(255),
+  `titre` varchar(100) COLLATE utf8_unicode_ci,
+  `contenu` mediumtext COLLATE utf8_unicode_ci
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 -- --------------------------------------------------------
 
 --
--- Structure de la table `utilisateurs`
+-- Structure de la table `publicites`
 --
 
-DROP TABLE IF EXISTS `utilisateurs`;
-CREATE TABLE IF NOT EXISTS `utilisateurs` (
-  `IDUtilisateur` int(255) NOT NULL AUTO_INCREMENT,
-  `Nom` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
-  `Prenom` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
-  `DateDeNaissance` date NOT NULL,
-  `User` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
-  `Password` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
-  `Email` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
-  `2FA` varchar(100) COLLATE utf8_unicode_ci NOT NULL,
-  `Telephone` int(10) NOT NULL,
-  `IDTypeUtilisateur` int(255) NOT NULL,
-  `Photo` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
-  PRIMARY KEY (`IDUtilisateur`)
+DROP TABLE IF EXISTS `publicites`;
+CREATE TABLE IF NOT EXISTS `publicites` (
+  `IDutilisateur` int(255),
+  `titre` varchar(100) COLLATE utf8_unicode_ci,
+  `texte` mediumtext COLLATE utf8_unicode_ci,
+  `photo` varchar(100) COLLATE utf8_unicode_ci,
+  `IPsaisie` varchar(100) COLLATE utf8_unicode_ci,
+  `DateSaisie` date,
+  `ValideeParModerateur` tinyint(1),
+  `MoyenDePamentUtilise` varchar(255) COLLATE utf8_unicode_ci,
+  FOREIGN KEY(IDUtilisateur) references utilisateurs(IDUtilisateur) ON DELETE CASCADE,
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
-COMMIT;
+
+
+-- --------------------------------------------------------
+
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
