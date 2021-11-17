@@ -24,7 +24,7 @@ SET time_zone = "+00:00";
 
 
 -- --------------------------------------------------------
-
+-- ALPHA DFEZRFRZEGREZGREZGFV
 --
 -- Structure de la table `typedutilisateurs`
 --
