@@ -130,7 +130,7 @@ DROP TABLE IF EXISTS `typesdexperiences`;
 CREATE TABLE IF NOT EXISTS `typesdexperiences` (
   `IDTypeExperience` int(255) AUTO_INCREMENT,
   `Type` varchar(255) COLLATE utf8_unicode_ci,
-  PRIMARY KEY (`IDTypeExp`)
+  PRIMARY KEY (`IDTypeExperience`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 
@@ -192,7 +192,7 @@ CREATE TABLE IF NOT EXISTS `message` (
 -- --------------------------------------------------------
 
 DELIMITER |
-CREATE TRIGGER DateModif 
+CREATE TRIGGER DateModif
 BEFORE INSERT
 ON message
 FOR EACH ROW
@@ -211,7 +211,7 @@ DROP TABLE IF EXISTS `typedecontrat`;
 CREATE TABLE IF NOT EXISTS `typedecontrat` (
   `IDTypeContrat` int(255) AUTO_INCREMENT,
   `libelle` varchar(255) COLLATE utf8_unicode_ci,
-  PRIMARY KEY (`IDContrat`)
+  PRIMARY KEY (`IDTypeContrat`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 -- --------------------------------------------------------
@@ -468,7 +468,7 @@ INSERT INTO actualites VALUES (111120588,"","","1960-07-03",True,NULL,"",True,11
 INSERT INTO actualites VALUES (11117151,"","","1924-09-13",True,NULL,"",True,113285034);
 INSERT INTO actualites VALUES (11117379,"","","1992-08-26",True,NULL,"",True,215680582);
 INSERT INTO actualites VALUES (111112397,"","","1991-09-01",True,NULL,"",True,120686476);
-INSERT INTO actualites VALUES (111119705,"","","1922-11-13",True,NULL,"",True,19468071);
+INSERT INTO actualites VALUES (111119706,"","","1922-11-13",True,NULL,"",True,19468071);
 INSERT INTO actualites VALUES (111110861,"","","2010-01-01",True,NULL,"",True,216403595);
 INSERT INTO actualites VALUES (11117127,"","","1983-05-05",True,NULL,"",True,115925615);
 INSERT INTO actualites VALUES (111111146,"","","1974-06-11",True,NULL,"",True,116162802);
@@ -544,7 +544,7 @@ INSERT INTO contacts VALUES (114413409,22942214);
 INSERT INTO contacts VALUES (1488753,22942214);
 INSERT INTO contacts VALUES (115805387,22942214);
 INSERT INTO contacts VALUES (11627811,115805387);
-INSERT INTO contacts VALUES (114001025,114175118);
+INSERT INTO contacts VALUES (114001026,114175118);
 INSERT INTO contacts VALUES (211768189,216942260);
 INSERT INTO contacts VALUES (116584365,210765908);
 INSERT INTO contacts VALUES (114413409,27332610);
