@@ -79,6 +79,7 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
+    z-index: 10;
 }
 
 #nav-container {
@@ -143,7 +144,225 @@ body {
 
 
 /*
-/// Section ...
+/// Section Profil
 */
 
+#nav-photo{
+position: absolute;
+width: 256px;
+height: 256px;
+left: 207px;
+top: 249px;
 
+background: #ACC5CF;
+border-radius: 15px;
+}
+
+#nav-blockhaut{
+position: absolute;
+width: 200%;
+height: 369px;
+left: 0px;
+top: 57px;
+background: linear-gradient(92.26deg, #E6F8FF 16.31%, #F4FCFF 95.71%);
+}
+
+#nav-Nom-Prenom{
+position: absolute;
+width: 217px;
+height: 43px;
+left: 518px;
+top: 249px;
+    
+font-family: Amiko;
+font-style: normal;
+font-weight: bold;
+font-size: 32px;
+line-height: 43px;
+color: #4498BB;
+}
+
+#nav-Poste{
+position: absolute;
+width: 68px;
+height: 32px;
+left: 518px;
+top: 308px;
+    
+font-family: Amiko;
+font-style: normal;
+font-weight: normal;
+font-size: 24px;
+line-height: 32px;
+/* identical to box height */
+    
+    
+color: #4498BB
+}
+#nav-Ville{
+position: absolute;
+width: 52px;
+height: 32px;
+left: 518px;
+top: 356px;
+    
+font-family: Amiko;
+font-style: normal;
+font-weight: normal;
+font-size: 24px;
+line-height: 32px;
+/* identical to box height */
+    
+    
+color: #4498BB;
+    
+}
+
+#nav-Description{
+position: absolute;
+width: 1186px;
+height: 131px;
+left: 518px;
+top: 404px;
+    
+font-family: Amiko;
+font-style: normal;
+font-weight: normal;
+font-size: 24px;
+line-height: 32px;
+    
+color: #4498BB;
+}
+
+#nav-CV{
+position: absolute;
+width: 195px;
+height: 46px;
+left: 477px;
+top: 779px;
+    
+font-family: Amiko;
+font-style: normal;
+font-weight: bold;
+font-size: 32px;
+line-height: 43px;
+    
+color: #4498BB;
+
+}
+#nav-container-CV-Fichier{
+position: absolute;
+width: 372px;
+height: 88px;
+left: 400px;
+top: 907px;
+    
+background: #ACC5CF;
+border-radius: 15px;   
+    
+}
+#nav-Nom-Fichier-CV{
+
+position: absolute;
+width: 304px;
+height: 49px;
+left: 431px;
+top: 928px;
+    
+font-family: Amiko;
+font-style: normal;
+font-weight: normal;
+font-size: 24px;
+line-height: 32px;
+display: flex;
+align-items: center;
+text-align: center;
+    
+color: #000000;
+    
+}
+#nav-CV-Actuel{
+position: absolute;
+width: 670px;
+height: 48px;
+left: 895px;
+top: 779px;
+  
+font-family: Amiko;
+font-style: normal;
+font-weight: bold;
+font-size: 32px;
+line-height: 43px;
+    
+color: #4498BB;
+}
+
+#nav-container-CV-Import{
+position: absolute;
+width: 564px;
+height: 48px;
+left: 895px;
+top: 947px;
+
+background: #4498BB;
+border-radius: 15px;
+
+}
+#nav-import{
+position: absolute;
+width: 282px;
+height: 32px;
+left: 1050px;
+top: 955px;
+    
+font-family: Amiko;
+font-style: normal;
+font-weight: normal;
+font-size: 24px;
+line-height: 32px;
+/* identical to box height */
+    
+display: flex;
+align-items: center;
+text-align: center;
+    
+color: #FFFFFF;
+
+}
+
+#nav-chat-acces{
+
+position: absolute;
+width: 233px;
+height: 72px;
+left: 159px;
+top: 1407px;
+    
+font-family: Amiko;
+font-style: normal;
+font-weight: normal;
+font-size: 24px;
+line-height: 32px;
+/* identical to box height */
+    
+    
+color: #000000;
+    
+    
+/* Inside Auto Layout */
+    
+flex: none;
+order: 0;
+flex-grow: 0;
+margin: 0px 10px;
+}
+#nav-Bas-de-Page{
+position: absolute;
+width: 1000%;
+height: 224px;
+left: 0px;
+top: 1806px;
+    
+background: #ACC5CF;
+
+}
