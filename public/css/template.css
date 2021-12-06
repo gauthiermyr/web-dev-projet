@@ -1,0 +1,98 @@
+/* 
+   !!! Mettre tous les codes css dans la bonne section 
+   !!! pour un meilleur maintien du code
+*/
+
+/*
+/// Section imports
+*/
+
+@import url(https://fonts.googleapis.com/css?family=Open+Sans);
+
+/*
+/// Section variables
+/// Toujours utiliser ces variables pour les couleurs
+/// Exemple d'utilisation: color: var(--blue)
+*/
+
+:root {
+    --blue: #4498BB;
+    --light-blue: #E9F0F8;
+    --white: #FFFFFF;
+}
+
+/*
+/// Section globales
+*/
+
+body {
+    margin: 0;
+    font-family: 'Open Sans',serif;
+}
+
+.text-white {
+    color: var(--white);
+}
+
+/*
+/// Section Navigation
+*/
+
+.navigation {
+    height: 64px;
+    width: 100%;
+    position: fixed;
+    background-color: var(--blue);
+    padding: 0px 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#nav-container {
+    width: min(90%, 1240px);
+    display: flex;
+    justify-content: space-between;
+}
+
+.nav-element {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+#input-nav-bar {
+    width: min(40vw, 100vw - 153px - 105px - 91px);
+    height: 36px;
+    border: none;
+    border-radius: 5px;
+    font-size: 18px;
+    padding-left: 16px;
+    color: var(--blue);
+}
+
+#input-nav-bar::placeholder {
+    color: var(--blue);
+}
+
+.nav-element > button {
+    border: none;
+}
+
+/*
+/// Section ...
+*/
+
+
+
+/*
+/// Section ...
+*/
+
+
+
+/*
+/// Section ...
+*/
+
+
