@@ -59,8 +59,6 @@ body {
 .container {
     margin-top: 128px;
     width: min(90%, 1240px);
-    height: 400px;
-    background-color: var(--light-blue);
     margin-left: auto;
     margin-right: auto;
 
@@ -73,13 +71,13 @@ body {
 .navigation {
     height: 64px;
     width: 100%;
-    position: fixed;
+    position: absolute;
     top: 0px;
     background-color: var(--blue);
     display: flex;
     align-items: center;
     justify-content: center;
-    z-index: 10;
+    z-index:0;
 }
 
 #nav-container {
@@ -131,6 +129,59 @@ body {
     transition-property: transform;
 }
 
+/*
+/// Section post creation
+*/
+
+.post-creation-box {
+    width: 100%;
+    border-top: 1px solid var(--blue);
+    padding-top: 32px;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
+}
+
+#post-creation-textarea {
+    width: 95%;
+    height: 128px;
+    border: none;
+}
+
+.post-creation-box 
+
+/*
+/// Section post feed
+*/
+
+.post-container {
+    padding: 32px 0px ;
+    border-bottom: 1px solid var(--blue);
+}
+
+.post-navigation-date {
+
+}
+
+.post-navigation-profile {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.post-navigation-profile * {
+    margin: 0;
+}
+
+.post-body {
+    margin-top: 32px;
+    margin-bottom: 64px;
+}
+
+.post-footer {
+    display: flex;
+    justify-content: space-between;
+}
 /*
 /// Section post creation
 */
@@ -194,8 +245,6 @@ font-style: normal;
 font-weight: normal;
 font-size: 24px;
 line-height: 32px;
-/* identical to box height */
-    
     
 color: #4498BB
 }
@@ -210,10 +259,7 @@ font-family: Amiko;
 font-style: normal;
 font-weight: normal;
 font-size: 24px;
-line-height: 32px;
-/* identical to box height */
-    
-    
+line-height: 32px;    
 color: #4498BB;
     
 }
@@ -343,13 +389,9 @@ font-style: normal;
 font-weight: normal;
 font-size: 24px;
 line-height: 32px;
-/* identical to box height */
     
     
 color: #000000;
-    
-    
-/* Inside Auto Layout */
     
 flex: none;
 order: 0;
@@ -366,3 +408,349 @@ top: 1806px;
 background: #ACC5CF;
 
 }
+
+/*
+/// Section Chat
+*/
+
+#nav-connaissance{
+position: absolute;
+width: 304px;
+height: 32px;
+left: 80px;
+top: 159px;
+    
+font-family: Amiko;
+font-style: normal;
+font-weight: normal;
+font-size: 24px;
+line-height: 32px;
+color: rgba(68, 152, 187, 0.66);    
+}
+
+#nav-dicussion{
+position: absolute;
+width: 1189px;
+height: 36px;
+left: 663px;
+top: 238px;
+    
+font-family: Amiko;
+font-style: normal;
+font-weight: bold;
+font-size: 32px;
+line-height: 43px;
+    
+color: #4498BB;    
+}
+
+
+#nav-container-Chat{
+position: static;
+width: 604px;
+height: 56px;
+left: -8.5px;
+top: 0px;
+
+flex: none;
+order: 0;
+flex-grow: 0;
+margin: 32px 0px;
+}
+
+#nav-chat-mot{
+position: absolute;
+width: 56.81px;
+height: 32px;
+left: 9.44px;
+top: 14px;
+
+font-family: Amiko;
+font-style: normal;
+font-weight: bold;
+font-size: 24px;
+line-height: 32px;
+color: #FFFFFF;
+    
+}
+
+#nav-block-contacts1{
+    
+position: static;
+width: 571.5px;
+height: 104.85px;
+left: 7.75px;
+top: 88px;
+
+
+/* Inside Auto Layout */
+
+flex: none;
+order: 1;
+flex-grow: 0;
+margin: 32px 0px;
+    
+}
+
+#nav-Nom-Prenom1{
+position: absolute;
+left: 16.93%;
+right: 0.13%;
+top: 10.49%;
+bottom: 63.76%;
+
+font-family: Amiko;
+font-style: normal;
+font-weight: bold;
+font-size: 24px;
+line-height: 32px;
+
+color: #4498BB;
+    
+}
+
+#nav-ligne-block1{
+position: absolute;
+left: 16.89%;
+right: 0%;
+top: 41.96%;
+bottom: 38.96%;
+
+font-family: Amiko;
+font-style: normal;
+font-weight: normal;
+font-size: 18px;
+line-height: 24px;
+
+color: #4498BB;
+}
+
+#nav-trait-separateur1{
+position: absolute;
+left: 0.11%;
+right: 0.09%;
+top: 100%;
+bottom: 0%;
+
+border: 2px solid rgba(68, 152, 187, 0.33);
+}
+
+#nav-block-contacts2{
+position: static;
+width: 571.5px;
+height: 104.85px;
+left: 7.75px;
+top: 224.85px;
+
+
+/* Inside Auto Layout */
+
+flex: none;
+order: 2;
+flex-grow: 0;
+margin: 32px 0px;   
+}
+
+#nav-Nom-Prenom2{
+position: absolute;
+left: 16.93%;
+right: 0.13%;
+top: 10.49%;
+bottom: 63.76%;
+
+font-family: Amiko;
+font-style: normal;
+font-weight: bold;
+font-size: 24px;
+line-height: 32px;
+
+color: #4498BB;
+    
+}
+
+#nav-ligne-block2{
+position: absolute;
+left: 16.89%;
+right: 0%;
+top: 41.96%;
+bottom: 38.96%;
+
+font-family: Amiko;
+font-style: normal;
+font-weight: normal;
+font-size: 18px;
+line-height: 24px;
+
+color: #4498BB;
+}
+
+#nav-trait-separateur2{
+position: absolute;
+left: 0.11%;
+right: 0.09%;
+top: 100%;
+bottom: 0%;
+
+border: 2px solid rgba(68, 152, 187, 0.33);
+
+}
+#nav-block-contacts3{
+position: static;
+width: 571.5px;
+height: 104.85px;
+left: 7.75px;
+top: 361.7px;
+
+
+/* Inside Auto Layout */
+
+flex: none;
+order: 3;
+flex-grow: 0;
+margin: 32px 0px;
+}
+
+#nav-Nom-Prenom3{
+position: absolute;
+left: 16.93%;
+right: 0.13%;
+top: 10.49%;
+bottom: 63.76%;
+
+font-family: Amiko;
+font-style: normal;
+font-weight: bold;
+font-size: 24px;
+line-height: 32px;
+
+color: #4498BB;   
+}
+
+
+#nav-ligne-block3{
+position: absolute;
+left: 16.89%;
+right: 0%;
+top: 41.96%;
+bottom: 38.96%;
+
+font-family: Amiko;
+font-style: normal;
+font-weight: normal;
+font-size: 18px;
+line-height: 24px;
+
+color: #4498BB;  
+}
+
+#nav-trait-separateur3{
+position: absolute;
+left: 0.11%;
+right: 0.09%;
+top: 100%;
+bottom: 0%;
+
+border: 2px solid rgba(68, 152, 187, 0.33);
+}
+
+#nav-block-contacts4{
+
+position: static;
+width: 571.5px;
+height: 104.85px;
+left: 7.75px;
+top: 498.56px;
+
+
+flex: none;
+order: 4;
+flex-grow: 0;
+margin: 32px 0px;
+}
+#nav-Nom-Prenom4{
+position: absolute;
+left: 16.93%;
+right: 0.13%;
+top: 10.49%;
+bottom: 63.76%;
+
+font-family: Amiko;
+font-style: normal;
+font-weight: bold;
+font-size: 24px;
+line-height: 32px;
+
+color: #4498BB;
+}
+
+#nav-ligne-block4{
+position: absolute;
+left: 16.89%;
+right: 0%;
+top: 41.96%;
+bottom: 38.96%;
+
+font-family: Amiko;
+font-style: normal;
+font-weight: normal;
+font-size: 18px;
+line-height: 24px;
+
+color: #4498BB;   
+}
+
+#nav-trait-separateur4{
+position: absolute;
+left: 0.11%;
+right: 0.09%;
+top: 100%;
+bottom: 0%;
+
+border: 2px solid rgba(68, 152, 187, 0.33);
+}
+
+
+#nav-block-message{
+position: absolute;
+width: 440px;
+height: 108px;
+left: 971px;
+top: 409px;
+
+background: #C4C4C4;
+border-radius: 10px;
+}
+#nav-message-recu{
+position: absolute;
+width: 406px;
+height: 21px;
+left: calc(50% - 406px/2 + 233px);
+top: 423px;
+
+font-family: Alef;
+font-style: normal;
+font-weight: normal;
+font-size: 14px;
+line-height: 150%;
+
+color: #181818;
+    
+}
+#nav-votre-message{
+position: absolute;
+width: 268px;
+height: 30px;
+left: 475px;
+top: 1286px;
+
+font-family: Amiko;
+font-style: normal;
+font-weight: bold;
+font-size: 32px;
+line-height: 43px;
+
+color: #4498BB;  
+}
+
+
+
