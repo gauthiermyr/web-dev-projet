@@ -476,3 +476,5 @@ composer.lock
 
 #### JetBrains
 .idea
+
+config.ini
