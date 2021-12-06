@@ -3,8 +3,11 @@
 require('../../db/database.php');
 
 $stmt = $db->query("SELECT * FROM utilisateurs");
+$users = [];
 while ($row = $stmt->fetch()) {
-    echo $row['Nom'] . $row['Prenom'] ."<br />\n";
+    array_push($users, $row);
 }
+
+echo json_encode($users);
 
 
