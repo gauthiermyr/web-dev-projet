@@ -444,18 +444,31 @@ line-height: 43px;
 color: #4498BB;    
 }
 
+#nav-container-Chat-Whole{
+display: flex;
+flex-direction: column;
+align-items: center;
+padding: 0px;
+
+position: absolute;
+width: 587px;
+height: 603px;
+left: 11px;
+top: 305px;
+
+background: #FFFFFF;
+border-radius: 15px;  
+}
 
 #nav-container-Chat{
-position: static;
+position: absolute;
 width: 604px;
 height: 56px;
 left: -8.5px;
 top: 0px;
 
-flex: none;
-order: 0;
-flex-grow: 0;
-margin: 32px 0px;
+background: #4498BB;
+border-radius: 15px 15px 0px 0px;
 }
 
 #nav-chat-mot{
@@ -470,20 +483,18 @@ font-style: normal;
 font-weight: bold;
 font-size: 24px;
 line-height: 32px;
-color: #FFFFFF;
+color:#ffffff;
     
 }
 
 #nav-block-contacts1{
     
-position: static;
+position: absolute;
 width: 571.5px;
 height: 104.85px;
 left: 7.75px;
 top: 88px;
 
-
-/* Inside Auto Layout */
 
 flex: none;
 order: 1;
@@ -536,14 +547,11 @@ border: 2px solid rgba(68, 152, 187, 0.33);
 }
 
 #nav-block-contacts2{
-position: static;
+position: absolute;
 width: 571.5px;
 height: 104.85px;
 left: 7.75px;
 top: 224.85px;
-
-
-/* Inside Auto Layout */
 
 flex: none;
 order: 2;
@@ -595,14 +603,11 @@ border: 2px solid rgba(68, 152, 187, 0.33);
 
 }
 #nav-block-contacts3{
-position: static;
+position: absolute;
 width: 571.5px;
 height: 104.85px;
 left: 7.75px;
 top: 361.7px;
-
-
-/* Inside Auto Layout */
 
 flex: none;
 order: 3;
@@ -655,7 +660,7 @@ border: 2px solid rgba(68, 152, 187, 0.33);
 
 #nav-block-contacts4{
 
-position: static;
+position: absolute;
 width: 571.5px;
 height: 104.85px;
 left: 7.75px;
@@ -709,11 +714,70 @@ bottom: 0%;
 border: 2px solid rgba(68, 152, 187, 0.33);
 }
 
+#post-navigation-profile2{
+position: absolute;
+width: 117px;
+height: 52px;
+left: 803px;
+top: 407px;  
+}
+
+#image{
+position: absolute;
+width: 52px;
+height: 52px;
+left: 830px;
+top: 407px;
+border-radius: 26px;
+}
+
+#Alpha7{
+position: absolute;
+width: 50px;
+height: 19px;
+left: 900px;
+top: 419px;
+
+
+font-family: Alata;
+font-style: normal;
+font-weight: bold;
+font-size: 14px;
+line-height: 19px;
+
+color: #181818;
+}
+
+#FullStack{
+position: absolute;
+width: 44px;
+height: 15px;
+left: 900px;
+top: 437px;
+
+font-family: Alef;
+font-style: normal;
+font-weight: normal;
+font-size: 10px;
+line-height: 150%;
+/* identical to box height, or 15px */
+
+
+color: #181818;   
+}
+
+#post-navigation-profile-info{
+position: absolute;
+width: 117px;
+height: 52px;
+left: 803px;
+top: 407px; 
+}
 
 #nav-block-message{
 position: absolute;
 width: 440px;
-height: 108px;
+height: 70px;
 left: 971px;
 top: 409px;
 
@@ -722,10 +786,10 @@ border-radius: 10px;
 }
 #nav-message-recu{
 position: absolute;
-width: 406px;
-height: 21px;
-left: calc(50% - 406px/2 + 233px);
-top: 423px;
+width: 291px;
+height: 43px;
+left: 10px;
+top: 10px;
 
 font-family: Alef;
 font-style: normal;
@@ -750,6 +814,32 @@ font-size: 32px;
 line-height: 43px;
 
 color: #4498BB;  
+}
+
+#input-nav-bar2{
+position: absolute;
+width: 686px;
+height: 120px;
+left: 731px;
+top: 1316px;
+background: #C4C4C4;
+border-radius: 10px;
+}
+
+#pos{
+position: absolute;
+width: 173px;
+height: 74px;
+left: 1500px;
+top: 1340px;
+font-family: Amiko;
+font-style: normal;
+font-weight: normal;
+font-size: 24px;
+line-height: 32px;
+color:white;
+background: var(--blue);
+border-radius: 15px;  
 }
 
 
