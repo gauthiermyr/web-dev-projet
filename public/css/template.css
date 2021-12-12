@@ -1,0 +1,189 @@
+/* 
+   !!! Mettre tous les codes css dans la bonne section 
+   !!! pour un meilleur maintien du code
+*/
+
+/*
+/// Section imports
+*/
+
+@import url(https://fonts.googleapis.com/css?family=Open+Sans);
+
+/*
+/// Section variables
+/// Toujours utiliser ces variables pour les couleurs
+/// Exemple d'utilisation: color: var(--blue)
+*/
+
+:root {
+    --blue: #4498BB;
+    --light-blue: #E9F0F8;
+    --dark-blue: #0c1b22;
+    --dark-blue-transparent: hsla(199, 48%, 9%, 0.33);
+    --white: #FFFFFF;
+}
+
+/*
+/// Section globales
+*/
+
+body {
+    margin: 0;
+    font-family: 'Open Sans',serif;
+}
+
+.text-white {
+    color: var(--white);
+}
+
+.clickable {
+    cursor: pointer;   
+}
+
+.hover-translate {
+    transform: translateX(0px) translateY(0px);
+    transition: all 330ms ease-in-out;
+    transition-property: transform;
+}
+
+.hover-translate:hover {
+    transform: translateX(2px) translateY(-1px);
+    transition: all 330ms ease-in-out;
+    transition-property: transform;
+}
+
+.hover-translate:active {
+    transform: translateX(0px) translateY(0px);
+}
+
+.container {
+    margin-top: 128px;
+    width: min(90%, 1240px);
+    margin-left: auto;
+    margin-right: auto;
+
+}
+
+/*
+/// Section Navigation
+*/
+
+.navigation {
+    height: 64px;
+    width: 100%;
+    position: fixed;
+    top: 0px;
+    background-color: var(--blue);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#nav-container {
+    width: min(90%, 1240px);
+    display: flex;
+    justify-content: space-between;
+}
+
+.nav-element {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+#input-nav-bar {
+    width: min(40vw, 100vw - 153px - 105px - 91px);
+    height: 36px;
+    border: none;
+    border-radius: 5px;
+    font-size: 18px;
+    padding-left: 16px;
+    color: var(--blue);
+}
+
+#input-nav-bar::placeholder {
+    color: var(--blue);
+}
+
+.nav-element > button {
+    border: none;
+    height: 100%;
+    border-radius: 5px;
+    background-color: var(--white);
+    color: var(--blue);
+    box-shadow: 2px 2px 5px var(--dark-blue-transparent);
+    transition: all 330ms ease-in-out;
+    transition-property: transform, background-color;
+}
+
+.nav-element > button:hover {
+    cursor: pointer;
+    transition: all 330ms ease-in-out;
+    transition-property: transform, background-color;
+}
+
+.nav-element > button:active {
+    background-color: var(--light-blue);
+    transition: all 330ms ease-in-out;
+    transition-property: transform;
+}
+
+/*
+/// Section post creation
+*/
+
+.post-creation-box {
+    width: 100%;
+    border-top: 1px solid var(--blue);
+    padding-top: 32px;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
+}
+
+#post-creation-textarea {
+    width: 95%;
+    height: 128px;
+    border: none;
+}
+
+.post-creation-box 
+
+/*
+/// Section post feed
+*/
+
+.post-container {
+    padding: 32px 0px ;
+    border-bottom: 1px solid var(--blue);
+}
+
+.post-navigation-date {
+
+}
+
+.post-navigation-profile {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.post-navigation-profile * {
+    margin: 0;
+}
+
+.post-body {
+    margin-top: 32px;
+    margin-bottom: 64px;
+}
+
+.post-footer {
+    display: flex;
+    justify-content: space-between;
+}
+
+/*
+/// Section ...
+*/
+
+
