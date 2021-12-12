@@ -59,6 +59,8 @@ body {
 .container {
     margin-top: 128px;
     width: min(90%, 1240px);
+    height: 400px;
+    background-color: var(--light-blue);
     margin-left: auto;
     margin-right: auto;
 
@@ -132,55 +134,68 @@ body {
 /// Section post creation
 */
 
-.post-creation-box {
-    width: 100%;
-    border-top: 1px solid var(--blue);
-    padding-top: 32px;
-    display: flex;
-    flex-direction: row;
-    align-items: flex-end;
-}
 
-#post-creation-textarea {
-    width: 95%;
-    height: 128px;
-    border: none;
-}
 
-.post-creation-box 
 
 /*
 /// Section post feed
 */
 
-.post-container {
-    padding: 32px 0px ;
-    border-bottom: 1px solid var(--blue);
+
+/*
+/// Section offre
+*/
+
+#post-offre-container{
+    position: absolute;
+    width: 393px;
+    height: 43px;
+    left: 258px;
+    top: 238px;
+
+    font-family: Amiko;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 32px;
+    line-height: 43px;
+    /* identical to box height */
+
+    color: #4498BB;
 }
 
-.post-navigation-date {
-
+.post-offre{
+    position: absolute;
+    width: 141px;
+    height: 52px;
+    left: 535px;
+    top: 418px;
 }
 
-.post-navigation-profile {
-    display: flex;
-    align-items: center;
-    gap: 16px;
+
+#upload-offre{
+    position: absolute;
+    width: 790px;
+    height: 80px;
+    left: 535px;
+    top: 522px;
 }
 
-.post-navigation-profile * {
-    margin: 0;
+.clickable-valider1{
+    position: absolute;
+    width: 151px;
+    height: 42px;
+    left: 555px;
+    top: 623px;
 }
 
-.post-body {
-    margin-top: 32px;
-    margin-bottom: 64px;
+.clickable-valider2{
+    position: absolute;
+    width: 149.18px;
+    height: 39.34px;
+    left: 565px;
+    top: 900.66px;
 }
 
-.post-footer {
-    display: flex;
-    justify-content: space-between;
-}
 
 /*
 /// Section ...
