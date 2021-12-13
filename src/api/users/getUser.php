@@ -1,10 +1,10 @@
 <?php
 
 require('../../db/database.php');
-//
-//if (!isset($_GET['id'])){
-//    echo json_encode(["success" => false]);
-//}
+
+if (isset($_GET['id'])){
+    echo json_encode(["success" => false]);
+}
 else{
     $stmt = $db->query("SELECT * FROM utilisateurs");
     $users = [];
