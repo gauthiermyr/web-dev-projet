@@ -92,7 +92,7 @@ body {
 }
 
 #input-nav-bar {
-    width: min(40vw, 100vw - 153px - 105px - 91px);
+    width: min(400px, 40vw, 100vw - 153px - 105px - 91px);
     height: 36px;
     border: none;
     border-radius: 5px;
