@@ -158,6 +158,30 @@ body {
     border-bottom: 1px solid var(--blue);
 }
 
+.post-navigation-date {
+
+}
+
+.post-navigation-profile {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.post-navigation-profile * {
+    margin: 0;
+}
+
+.post-body {
+    margin-top: 32px;
+    margin-bottom: 64px;
+}
+
+.post-footer {
+    display: flex;
+    justify-content: space-between;
+}
+
 /*
 /// Section offre
 */
@@ -244,115 +268,37 @@ body {
 }
 
 
-.post-navigation-date {
+/*
+/// Section footer
+*/
 
+.footer{
+    bottom: 0;
+    width: 100%;
+    height: 200px;
+    display: flex;
+    background: #ACC5CF;
+    flex-direction: column;
+    justify-content: center;
+    flex-wrap: wrap;
 }
 
-.post-navigation-profile {
+.titre-site-adresse{
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+    color: #FFFFFF;
+}
+
+#CG{
     display: flex;
     align-items: center;
-    gap: 16px;
-}
-
-.post-navigation-profile * {
-    margin: 0;
-}
-
-.post-body {
-    margin-top: 32px;
-    margin-bottom: 64px;
-}
-
-.post-footer {
-    display: flex;
-    justify-content: space-between;
+    justify-content: center;
+    color: #FFFFFF;
 }
 
 /*
-/// Section identification
+/// Section ...
 */
 
-.identification {
-    border: 3px solid var(--blue);
-    border-radius: 20px;
-    margin: 200px 33% 100px 33%;
-    padding: 2% 2% 0% 2%;
-    color: var(--blue);
-}
 
-.identification-titre h2 {
-    font-weight: bold;
-    font-size: 32px;
-    margin-bottom: 15px;
-    margin-top: 10px;
-    text-align: center;
-}
-
-.identification-titre p {
-    font-size: 15px;
-    text-align: center;
-    margin: 0px 0px 5px 0px;
-}
-
-.identification-write-input::placeholder {
-    font-family: 'Open Sans',serif;
-    color: var(--blue);
-}
-
-.identification-write-input {
-    border: 1px solid var(--blue);
-    width: 97%;
-    border-radius: 10px;
-    padding-left: 2%;
-    padding-top: 1%;
-    height: 30px;
-    margin: 0px;
-    margin-top: 15px;
-}
-
-.identification-valider {
-    margin-top: 15px;
-}
-
-.identification-valider-button {
-    color: var(--white);
-    background-color: var(--blue);
-    border: 1px solid var(--blue);
-    border-radius: 10px;
-    width: 100%;
-    height: 35px;
-    font-size: 17px;
-    font-weight: bold;
-}
-
-.identification-valider-button:hover {
-    background-color: var(--dark-blue);
-}
-
-.identification-changer {
-    margin: 15px 0px;
-}
-
-.identification-changer p {
-    margin: 3px 0px;
-}
-
-.identification-changer a:link {
-    text-decoration: none;
-    color: var(--blue);
-}
-
-.identification-changer a:hover {
-    margin: 3px 0px;
-    text-decoration: underline;
-}
-
-.identification-changer a:active {
-    margin: 3px 0px;
-    text-decoration: underline;
-}
-
-.identification-changer a:visited {
-    text-decoration: none;
-    color: var(--blue);
-}
