@@ -72,7 +72,9 @@
         <button id="pos" onclick="search()">Envoyer</button>
 
 
-        <div id="nav-Bas-de-Page">  </div>
+        <div id="nav-Bas-de-Page">  
+            
+        </div>
 
         <!-- <div id="nav-container-Chat"> </div>
         <div id="nav-chat-mot">Chat </div>
