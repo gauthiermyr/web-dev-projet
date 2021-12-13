@@ -2,7 +2,7 @@
         include('src/dynamic/header.php');
 ?>
 
-    <div class="container-offre">
+    <div class="container">
         <div id="post-offre-container">
             Voici les offres d'emploi:
         </div>
