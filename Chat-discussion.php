@@ -55,9 +55,8 @@
         <img src="./public/img/profil.png" id="image"></img>
         <div class="post-navigation-profile2">
                 <div id="Alpha7">Alpha 7</div>
-                <div id="FullStack">Full Stack</div>
-                
-        </div>
+                <div id="FullStack">Full Stack</div> 
+            </div>
 
         <div id="nav-block-message">
             <div id="nav-message-recu"> Salut comment vas-tu ? </div>
