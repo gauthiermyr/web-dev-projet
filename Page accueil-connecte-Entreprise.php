@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="./public/css/template.css" rel="stylesheet">
+    <link href="./public/css/templateAccueilEntreprise.css" rel="stylesheet">
     <title>LeankDingue</title>
 </head>
 <body>
@@ -23,60 +24,36 @@
             </div>
         </div>
     </div>
+    <div id="nav-blockhaut"></div>
+    <div id="nav-photo"></div>
+    <div id="nav-Nom-Prenom"> Entreprise </div>
+    <div id="nav-Poste"> Domaine </div>
+    <div id="nav-Ville"> Ville </div>
+    <div id="nav-Description"> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ... </div>
     
-    <div class="container-Chat">
-        <div id="nav-blockhaut"></div>
-        <div id="nav-photo"></div>
-        <div id="nav-Nom-Prenom"> Entreprise </div>
-        <div id="nav-Poste"> Domaine </div>
-        <div id="nav-Ville"> Ville </div>
-        <div id="nav-Description"> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ... </div>
+    <div class="container-Entreprise">
         
-        <div id="nav-Block-messsage-liste"> dfgdtfb </div>
+        <div id="nav-Block-messsage-liste"></div>
         <div id="nav-Block-liste">Liste des employés connectés :</div>
-        <div id="nav-container-Chat-Wholes">
+        <div id="nav-collab-mot">COLLABORATEURS : </div>
+        <div id="nav-view-all">VIEW ALL</div>
+        
+        
+        <div id="nav-block-collab1">
             <img src="./public/img/profil.png" id="image1"></img>
-            <div id="nav-Block-colaborateur">
-                <div id="nav-collab-mot">COLLABORATEURS : </div>
-                <div id="nav-view-all">VIEW ALL</div>
-                <div id="nav-trait-collabseparateur1"> </div>
-                <div id="nav-block-collab1">
-                    <div id="nav-Nom-collab1">Darlene Black</div>
-                    <div id="Metier1">HR-manager</div> 
-                </div>
-                <div id="nav-block-collab2">
-                    <img src="./public/img/profil.png" id="image2"></img>
-                    <div id="nav-Nom-collab2">Theresa Steward</div>
-                    <div id="Metier2">iOS developer</div> 
-                </div>
-                <div id="nav-block-collab3">
-                    <img src="./public/img/profil.png" id="image3"></img>
-                    <div id="nav-Nom-collab3">Brandon Wilson</div>
-                    <div id="Metier3"> Senior UX designer</div> 
-                </div>
-            </div>
+            <div id="nav-Nom-collab1">Darlene Black</div>
+            <div id="Metier1">HR-manager</div> 
         </div>
-
-        <!-- <img src="./public/img/profil.png" id="image1"></img>
-        <div id="Block-colaborateur">
-            <div id="nav-collab-mot">COLLABORATEURS : </div>
-            <div id="nav-view-all">VIEW ALL</div>
-            <div id="nav-trait-collabseparateur1"> </div>
-            <div id="nav-block-collab1">
-                <div id="nav-Nom-collab1">Darlene Black</div>
-                <div id="Metier1">HR-manager</div> 
-            </div>
-            <div id="nav-block-collab2">
-                <img src="./public/img/profil.png" id="image2"></img>
-                <div id="nav-Nom-collab2">Theresa Steward</div>
-                <div id="Metier2">iOS developer</div> 
-            </div>
-            <div id="nav-block-collab3">
-                <img src="./public/img/profil.png" id="image3"></img>
-                <div id="nav-Nom-collab3">Brandon Wilson</div>
-                <div id="Metier3"> Senior UX designer</div> 
-            </div>
-        </div> -->
+        <div id="nav-block-collab2">
+            <img src="./public/img/profil.png" id="image1"></img>
+            <div id="nav-Nom-collab1">Theresa Steward</div>
+            <div id="Metier1">iOS developer</div> 
+        </div>
+        <div id="nav-block-collab3">
+            <img src="./public/img/profil.png" id="image1"></img>
+            <div id="nav-Nom-collab1">Brandon Wilson</div>
+            <div id="Metier1"> Senior UX designer</div> 
+        </div>
 
 
         <div id="Block-Offres"></div>
