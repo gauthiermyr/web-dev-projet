@@ -29,11 +29,12 @@
 
 body {
     margin: 0;
+    margin-top:70px;
     font-family: 'Open Sans',serif;
 }
 
 .text-white {
-    color: var(--white);
+    color: var(--white);    
 }
 
 .clickable {
@@ -183,7 +184,186 @@ body {
 }
 
 /*
-/// Section ...
+/// Page Entreprise 
 */
 
 
+.NomEntreprise {
+   
+/*position: absolute;*/
+width: 94px;
+height: 43px;
+/*left: 518px;
+top: 249px;*/
+
+font-family: Amiko;
+font-style: normal;
+font-weight: bold;
+font-size: 32px;
+line-height: 43px;
+/* identical to box height */
+
+color: #4498BB;
+}
+.ClasseNomOffre {
+    /*position: absolute;*/
+    width: 251px;
+    height: 54px;
+    /*left: 620.5px;
+    top: 243px;*/
+    
+    background: #FFFFFF;
+    border: 3px solid #4498BB;
+    box-sizing: border-box;
+    border-radius: 15px;
+}
+.VilleEntreprise{
+    width: 65px;
+    height: 32px;
+
+    font-family: Amiko;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 24px;
+    line-height: 32px;
+/* identical to box height */
+    color: #4498BB;
+}
+.ClasseVilleOffre{
+    width: 178px;
+height: 38px;
+
+background: #FFFFFF;
+border: 3px solid #4498BB;
+box-sizing: border-box;
+border-radius: 15px;
+}
+.nav-Save-post{
+    
+width: 377px;
+height: 32px;
+
+font-family: Amiko;
+font-style: normal;
+font-weight: bold;
+font-size: 24px;
+line-height: 32px;
+/* identical to box height */
+text-decoration-line: underline;
+
+color: #4498BB;
+}
+.DescrEntreprise{
+    position: absolute;
+width: 163px;
+height: 35px;
+
+font-family: Amiko;
+font-style: normal;
+font-weight: normal;
+font-size: 26px;
+line-height: 35px;
+/* identical to box height */
+
+color: #4498BB;
+}
+.OffreDesciption{
+    width: 1199px;
+height: 115px;
+
+
+background: #FFFFFF;
+border: 3px solid #4498BB;
+box-sizing: border-box;
+border-radius: 15px;
+}
+#Votre_Offre{
+    
+width: 195px;
+height: 46px;
+
+font-family: Amiko;
+font-style: normal;
+font-weight: bold;
+font-size: 32px;
+line-height: 43px;
+
+color: #4498BB;
+}
+#nav-Import-offer{
+   
+    /*position: absolute;
+    width: 1199px;
+    height: 217px;
+    left: 518px;
+    top: 870px;*/
+
+    width: 1199px;
+    height: 217px;
+    
+    background: #FFFFFF;
+    border: 3px dashed #4498BB;
+    box-sizing: border-box;
+    border-radius: 15px;
+}
+#Televerser{
+    width: 245.66px;
+    height: 64.06px;
+    justify-content: center;
+}
+.Offer-add{
+    width: 670px;
+    height: 45px;
+
+
+    font-family: Amiko;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 24px;
+    line-height: 32px;
+
+    color: #4498BB;
+
+    transform: rotate(0.17deg);
+}
+#Description_Offre{
+    width: 237px;
+height: 35px;
+
+
+font-family: Amiko;
+font-style: normal;
+font-weight: normal;
+font-size: 26px;
+line-height: 35px;
+/* identical to box height */
+
+color: #4498BB;
+}
+.In_Offre_Desciption{
+    width: 1199px;
+    height: 115px;
+
+
+background: #FFFFFF;
+border: 3px solid #4498BB;
+box-sizing: border-box;
+border-radius: 15px;
+}
+#CadreSubmitPost{
+    width: 332.66px;
+    height: 61px;
+
+
+}
+.Poster_Offre{
+    
+width: 332.66px;
+height: 61px;
+justify-content: right;
+
+background: #FFFFFF;
+border: 3px solid #4498BB;
+box-sizing: border-box;
+border-radius: 15px;
+}
