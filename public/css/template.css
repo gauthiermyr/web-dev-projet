@@ -158,6 +158,92 @@ body {
     border-bottom: 1px solid var(--blue);
 }
 
+/*
+/// Section offre
+*/
+
+#post-offre-container{
+    position: absolute;
+    width: 393px;
+    height: 43px;
+    left: 258px;
+    top: 238px;
+
+    font-family: Amiko;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 32px;
+    line-height: 43px;
+    /* identical to box height */
+
+    color: #4498BB;
+}
+
+.post-offre{
+    position: absolute;
+    width: 141px;
+    height: 52px;
+    left: 535px;
+    top: 418px;
+}
+
+.offre-postuler{
+    position: absolute;
+    width: 151px;
+    height: 42px;
+    left: 555px;
+    top: 623px;
+}
+
+.clickable-valider1{
+    position: absolute;
+    width: 151px;
+    height: 42px;
+    left: 555px;
+    top: 623px;
+}
+
+.clickable-valider2{
+    position: absolute;
+    width: 121px;
+    height: 12px;
+    left: 620px;
+    top: 912px;
+
+    font-family: Alata;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 12px;
+    line-height: 150%;
+    /* or 18px */
+    color: #000000;
+}
+
+#contenu-offre1{
+    position: absolute;
+    width: 790px;
+    height: 21px;
+    left: calc(50% - 790px/2);
+    top: 860px;
+
+    font-family: Alef;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 150%;
+    /* identical to box height, or 21px */
+    color: #181818;
+}
+
+#titre-offre1{
+    position: absolute;
+    width: 141px;
+    height: 52px;
+    left: 565px;
+    top: 792px;
+}
+
+
 .post-navigation-date {
 
 }
