@@ -58,6 +58,7 @@ body {
 }
 
 .container {
+    min-height:100vh;
     margin-top: 128px;
     width: min(90%, 1240px);
     margin-left: auto;
@@ -72,12 +73,13 @@ body {
 .navigation {
     height: 64px;
     width: 100%;
-    position: fixed;
+    position: absolute;
     top: 0px;
     background-color: var(--blue);
     display: flex;
     align-items: center;
     justify-content: center;
+    z-index:0;
 }
 
 #nav-container {
@@ -148,8 +150,6 @@ body {
     border: none;
 }
 
-.post-creation-box 
-
 /*
 /// Section post feed
 */
@@ -183,10 +183,1000 @@ body {
     justify-content: space-between;
 }
 
+#nav-photo{
+position: absolute;
+width: 256px;
+height: 256px;
+left: 207px;
+top: 249px;
+
+background: #ACC5CF;
+border-radius: 15px;
+}
+
+#nav-blockhaut{
+position: absolute;
+width: 200%;
+height: 369px;
+left: 0px;
+top: 57px;
+background: linear-gradient(92.26deg, #E6F8FF 16.31%, #F4FCFF 95.71%);
+}
+
+#nav-Nom-Prenom{
+position: absolute;
+width: 217px;
+height: 43px;
+left: 518px;
+top: 249px;
+    
+font-family: Amiko;
+font-style: normal;
+font-weight: bold;
+font-size: 32px;
+line-height: 43px;
+color: #4498BB;
+}
+
+#nav-Poste{
+position: absolute;
+width: 68px;
+height: 32px;
+left: 518px;
+top: 308px;
+    
+font-family: Amiko;
+font-style: normal;
+font-weight: normal;
+font-size: 24px;
+line-height: 32px;
+    
+color: #4498BB
+}
+#nav-Ville{
+position: absolute;
+width: 52px;
+height: 32px;
+left: 518px;
+top: 356px;
+    
+font-family: Amiko;
+font-style: normal;
+font-weight: normal;
+font-size: 24px;
+line-height: 32px;    
+color: #4498BB;
+    
+}
+
+#nav-Description{
+position: absolute;
+width: 1186px;
+height: 131px;
+left: 518px;
+top: 404px;
+    
+font-family: Amiko;
+font-style: normal;
+font-weight: normal;
+font-size: 24px;
+line-height: 32px;
+    
+color: #4498BB;
+}
+
+#nav-CV{
+position: absolute;
+width: 195px;
+height: 46px;
+left: 477px;
+top: 779px;
+    
+font-family: Amiko;
+font-style: normal;
+font-weight: bold;
+font-size: 32px;
+line-height: 43px;
+    
+color: #4498BB;
+
+}
+#nav-container-CV-Fichier{
+position: absolute;
+width: 372px;
+height: 88px;
+left: 400px;
+top: 907px;
+    
+background: #ACC5CF;
+border-radius: 15px;   
+    
+}
+#nav-Nom-Fichier-CV{
+
+position: absolute;
+width: 304px;
+height: 49px;
+left: 431px;
+top: 928px;
+    
+font-family: Amiko;
+font-style: normal;
+font-weight: normal;
+font-size: 24px;
+line-height: 32px;
+display: flex;
+align-items: center;
+text-align: center;
+    
+color: #000000;
+    
+}
+#nav-CV-Actuel{
+position: absolute;
+width: 670px;
+height: 48px;
+left: 895px;
+top: 779px;
+  
+font-family: Amiko;
+font-style: normal;
+font-weight: bold;
+font-size: 32px;
+line-height: 43px;
+    
+color: #4498BB;
+}
+
+#nav-container-CV-Import{
+position: absolute;
+width: 564px;
+height: 48px;
+left: 895px;
+top: 947px;
+
+background: #4498BB;
+border-radius: 15px;
+
+}
+#nav-import{
+position: absolute;
+width: 282px;
+height: 32px;
+left: 1050px;
+top: 955px;
+    
+font-family: Amiko;
+font-style: normal;
+font-weight: normal;
+font-size: 24px;
+line-height: 32px;
+/* identical to box height */
+    
+display: flex;
+align-items: center;
+text-align: center;
+    
+color: #FFFFFF;
+
+}
+
+#nav-chat-acces{
+
+position: absolute;
+width: 233px;
+height: 72px;
+left: 159px;
+top: 1407px;
+    
+font-family: Amiko;
+font-style: normal;
+font-weight: normal;
+font-size: 24px;
+line-height: 32px;
+    
+    
+color: #000000;
+    
+flex: none;
+order: 0;
+flex-grow: 0;
+margin: 0px 10px;
+}
+
+#nav-Bas-de-Page{
+position: absolute;
+width: 100%;
+/* width: 1000%; */
+height: 224px;
+left: 0px;
+top: 1806px;
+
+background: #ACC5CF;
+}
+
 /*
-/// Page Entreprise 
+/// Section offre
 */
 
+#post-offre-container{
+    position: absolute;
+    width: 393px;
+    height: 43px;
+    left: 258px;
+    top: 238px;
+
+    font-family: Amiko;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 32px;
+    line-height: 43px;
+    /* identical to box height */
+
+    color: #4498BB;
+}
+
+.post-offre{
+    position: absolute;
+    width: 141px;
+    height: 52px;
+    left: 535px;
+    top: 418px;
+}
+
+.offre-postuler{
+    position: absolute;
+    width: 151px;
+    height: 42px;
+    left: 555px;
+    top: 623px;
+}
+
+.clickable-valider1{
+    position: absolute;
+    width: 151px;
+    height: 42px;
+    left: 555px;
+    top: 623px;
+}
+
+.clickable-valider2{
+    position: absolute;
+    width: 121px;
+    height: 12px;
+    left: 620px;
+    top: 912px;
+
+    font-family: Alata;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 12px;
+    line-height: 150%;
+    /* or 18px */
+    color: #000000;
+}
+
+#contenu-offre1{
+    position: absolute;
+    width: 790px;
+    height: 21px;
+    left: calc(50% - 790px/2);
+    top: 860px;
+
+    font-family: Alef;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 150%;
+    /* identical to box height, or 21px */
+    color: #181818;
+}
+
+#titre-offre1{
+    position: absolute;
+    width: 141px;
+    height: 52px;
+    left: 565px;
+    top: 792px;
+}
+
+
+/*
+/// Section footer
+*/
+
+.footer{
+    bottom: 0;
+    width: 100%;
+    height: 200px;
+    display: flex;
+    background: #ACC5CF;
+    flex-direction: column;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.titre-site-adresse{
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+    color: #FFFFFF;
+}
+
+#CG{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #FFFFFF;
+}
+
+#nav-connaissance{
+position: absolute;
+width: 304px;
+height: 32px;
+left: 80px;
+top: 159px;
+    
+font-family: Amiko;
+font-style: normal;
+font-weight: normal;
+font-size: 24px;
+line-height: 32px;
+color: rgba(68, 152, 187, 0.66);    
+}
+
+#nav-dicussion{
+position: absolute;
+width: 1189px;
+height: 36px;
+left: 663px;
+top: 238px;
+    
+font-family: Amiko;
+font-style: normal;
+font-weight: bold;
+font-size: 32px;
+line-height: 43px;
+    
+color: #4498BB;    
+}
+
+#nav-container-Chat-Whole{
+display: flex;
+flex-direction: column;
+align-items: center;
+padding: 0px;
+
+position: absolute;
+width: 587px;
+height: 603px;
+left: 11px;
+top: 305px;
+
+background: #FFFFFF;
+border-radius: 15px;  
+}
+
+#nav-container-Chat{
+position: absolute;
+width: 604px;
+height: 56px;
+left: -8.5px;
+top: 0px;
+
+background: #4498BB;
+border-radius: 15px 15px 0px 0px;
+}
+
+#nav-chat-mot{
+position: absolute;
+width: 56.81px;
+height: 32px;
+left: 9.44px;
+top: 14px;
+
+font-family: Amiko;
+font-style: normal;
+font-weight: bold;
+font-size: 24px;
+line-height: 32px;
+color:#ffffff;
+    
+}
+
+#nav-block-contacts1{
+    
+position: absolute;
+width: 571.5px;
+height: 104.85px;
+left: 7.75px;
+top: 88px;
+
+
+flex: none;
+order: 1;
+flex-grow: 0;
+margin: 32px 0px;
+    
+}
+
+#nav-Nom-Prenom1{
+position: absolute;
+left: 16.93%;
+right: 0.13%;
+top: 10.49%;
+bottom: 63.76%;
+
+font-family: Amiko;
+font-style: normal;
+font-weight: bold;
+font-size: 24px;
+line-height: 32px;
+
+color: #4498BB;
+    
+}
+
+#nav-ligne-block1{
+position: absolute;
+left: 16.89%;
+right: 0%;
+top: 41.96%;
+bottom: 38.96%;
+
+font-family: Amiko;
+font-style: normal;
+font-weight: normal;
+font-size: 18px;
+line-height: 24px;
+
+color: #4498BB;
+}
+
+#nav-trait-separateur1{
+position: absolute;
+left: 0.11%;
+right: 0.09%;
+top: 100%;
+bottom: 0%;
+
+border: 2px solid rgba(68, 152, 187, 0.33);
+}
+
+#nav-block-contacts2{
+position: absolute;
+width: 571.5px;
+height: 104.85px;
+left: 7.75px;
+top: 224.85px;
+
+flex: none;
+order: 2;
+flex-grow: 0;
+margin: 32px 0px;   
+}
+
+#nav-Nom-Prenom2{
+position: absolute;
+left: 16.93%;
+right: 0.13%;
+top: 10.49%;
+bottom: 63.76%;
+
+font-family: Amiko;
+font-style: normal;
+font-weight: bold;
+font-size: 24px;
+line-height: 32px;
+
+color: #4498BB;
+    
+}
+
+#nav-ligne-block2{
+position: absolute;
+left: 16.89%;
+right: 0%;
+top: 41.96%;
+bottom: 38.96%;
+
+font-family: Amiko;
+font-style: normal;
+font-weight: normal;
+font-size: 18px;
+line-height: 24px;
+
+color: #4498BB;
+}
+
+#nav-trait-separateur2{
+position: absolute;
+left: 0.11%;
+right: 0.09%;
+top: 100%;
+bottom: 0%;
+
+border: 2px solid rgba(68, 152, 187, 0.33);
+
+}
+#nav-block-contacts3{
+position: absolute;
+width: 571.5px;
+height: 104.85px;
+left: 7.75px;
+top: 361.7px;
+
+flex: none;
+order: 3;
+flex-grow: 0;
+margin: 32px 0px;
+}
+
+#nav-Nom-Prenom3{
+position: absolute;
+left: 16.93%;
+right: 0.13%;
+top: 10.49%;
+bottom: 63.76%;
+
+font-family: Amiko;
+font-style: normal;
+font-weight: bold;
+font-size: 24px;
+line-height: 32px;
+
+color: #4498BB;   
+}
+
+
+#nav-ligne-block3{
+position: absolute;
+left: 16.89%;
+right: 0%;
+top: 41.96%;
+bottom: 38.96%;
+
+font-family: Amiko;
+font-style: normal;
+font-weight: normal;
+font-size: 18px;
+line-height: 24px;
+
+color: #4498BB;  
+}
+
+#nav-trait-separateur3{
+    position: absolute;
+    left: 0.11%;
+    right: 0.09%;
+    top: 100%;
+    bottom: 0%;
+
+    border: 2px solid rgba(68, 152, 187, 0.33);
+}
+
+#nav-block-contacts4{
+
+position: absolute;
+width: 571.5px;
+height: 104.85px;
+left: 7.75px;
+top: 498.56px;
+
+flex: none;
+order: 4;
+flex-grow: 0;
+margin: 32px 0px;
+}
+
+#nav-Nom-Prenom4{
+position: absolute;
+left: 16.93%;
+right: 0.13%;
+top: 10.49%;
+bottom: 63.76%;
+
+font-family: Amiko;
+font-style: normal;
+font-weight: bold;
+font-size: 24px;
+line-height: 32px;
+
+color: #4498BB;
+}
+
+#nav-ligne-block4{
+position: absolute;
+left: 16.89%;
+right: 0%;
+top: 41.96%;
+bottom: 38.96%;
+
+font-family: Amiko;
+font-style: normal;
+font-weight: normal;
+font-size: 18px;
+line-height: 24px;
+
+color: #4498BB;   
+}
+
+#nav-trait-separateur4{
+position: absolute;
+left: 0.11%;
+right: 0.09%;
+top: 100%;
+bottom: 0%;
+
+border: 2px solid rgba(68, 152, 187, 0.33);
+}
+
+#post-navigation-profile2{
+position: absolute;
+width: 117px;
+height: 52px;
+left: 803px;
+top: 407px;  
+}
+
+#image{
+position: absolute;
+width: 52px;
+height: 52px;
+left: 830px;
+top: 407px;
+border-radius: 26px;
+}
+
+#Alpha7{
+position: absolute;
+width: 50px;
+height: 19px;
+left: 900px;
+top: 419px;
+
+
+font-family: Alata;
+font-style: normal;
+font-weight: bold;
+font-size: 14px;
+line-height: 19px;
+
+color: #181818;
+}
+
+#FullStack{
+position: absolute;
+width: 44px;
+height: 15px;
+left: 900px;
+top: 437px;
+
+font-family: Alef;
+font-style: normal;
+font-weight: normal;
+font-size: 10px;
+line-height: 150%;
+/* identical to box height, or 15px */
+
+
+color: #181818;   
+}
+
+#post-navigation-profile-info{
+position: absolute;
+width: 117px;
+height: 52px;
+left: 803px;
+top: 407px; 
+}
+
+#nav-block-message{
+position: absolute;
+width: 440px;
+height: 70px;
+left: 971px;
+top: 409px;
+
+background: #C4C4C4;
+border-radius: 10px;
+}
+#nav-message-recu{
+position: absolute;
+width: 291px;
+height: 43px;
+left: 10px;
+top: 10px;
+
+font-family: Alef;
+font-style: normal;
+font-weight: normal;
+font-size: 14px;
+line-height: 150%;
+
+color: #181818;
+    
+}
+#nav-votre-message{
+position: absolute;
+width: 268px;
+height: 30px;
+left: 475px;
+top: 1286px;
+
+font-family: Amiko;
+font-style: normal;
+font-weight: bold;
+font-size: 32px;
+line-height: 43px;
+
+color: #4498BB;  
+}
+
+#input-nav-bar2{
+position: absolute;
+width: 686px;
+height: 120px;
+left: 731px;
+top: 1316px;
+background: #C4C4C4;
+border-radius: 10px;
+}
+
+#pos{
+position: absolute;
+width: 173px;
+height: 74px;
+left: 1500px;
+top: 1340px;
+font-family: Amiko;
+font-style: normal;
+font-weight: normal;
+font-size: 24px;
+line-height: 32px;
+color:white;
+background: var(--blue);
+border-radius: 15px;  
+}
+
+.identification-changer a:visited {
+    text-decoration: none;
+    color: var(--blue);
+}
+
+/*
+/// Section invitations
+*/
+
+.invitations-profil {
+    font-family: 'Open Sans',serif;
+    color: var(--blue);
+    position: fixed;
+    margin-left: 4%;
+    margin-top: 40px;
+    text-align: center;
+    border-bottom: 2px solid var(--blue);
+    border-top: 2px solid var(--blue);
+    padding: 25px 15px 0px 15px;
+}
+
+.invitations-profil img {
+    height: 100px;
+    width: 100px;
+    margin-left: 10px;
+}
+
+.invitations-profil a {
+    font-weight: bold;
+    font-size: 21px;
+}
+
+.invitations-profil a:hover {
+    color: #006894;
+}
+
+.invitations-notifs {
+    display: flex;
+    flex: auto;
+    flex-direction: column;
+    flex-wrap: wrap;
+    font-family: 'Open Sans',serif;
+    color: var(--blue);
+    align-items: center;
+    justify-content: space-between;
+    margin: 100px 22%;
+}
+
+.invitations-notifs-titre {
+    margin-top: 50px;
+    margin-bottom: 50px;
+    font-size: 24px;
+}
+
+.invitations-notifs a {
+    font-weight: bold;
+    font-size: 21px;
+}
+
+.invitations-notifs a:hover {
+    color: #006894;
+}
+
+.invitations-notifs h2 {
+    font-weight: bold;
+    font-size: 32px;
+    margin-bottom: 15px;
+}
+
+.invitations-notifs h5 {
+    font-weight: lighter;
+    font-size: 18px;
+}
+
+.invitations-attente {
+    display: flex;
+    flex: auto;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.invitations-attente-liste {
+    display: flex;
+    flex: auto;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-evenly;
+    border: 2px solid var(--blue);
+    border-radius: 10px;
+    padding: 20px 0%;
+    margin-bottom: 20px;
+}
+
+.invitations-attente-profil {
+    display: flex;
+    align-items: center;
+}
+
+.invitations-attente-profil img {
+    height: 75px;
+    width: 75px;
+}
+
+.invitations-attente-profil-detail {
+    display: flex;
+    flex-direction: column;
+}
+
+.invitations-attente-profil-detail a {
+    margin: 0px 0px 0px 20px;
+}
+
+.invitations-attente-profil-detail h5 {
+    margin: 0px 0px 0px 20px;
+}
+
+.invitations-attente-profil-detail h6 {
+    margin: 10px 0px 0px 20px;
+}
+
+.invitations-attente-accepter {
+    color: var(--white);
+    background-color: var(--blue);
+    border: 1px solid var(--blue);
+    border-radius: 10px;
+    width: 100%;
+    height: 35px;
+    font-size: 17px;
+    font-weight: bold;
+}
+
+.invitations-attente-accepter:hover {
+    background-color: var(--dark-blue);
+}
+
+.invitations-attente-refuser {
+    color: var(--blue);
+    background-color: var(--white);
+    border: 1px solid var(--blue);
+    border-radius: 10px;
+    width: 100%;
+    height: 35px;
+    font-size: 17px;
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+.invitations-attente-refuser:hover {
+    background-color: var(--light-blue);
+}
+
+.invitations-recent {
+    display: flex;
+    flex: auto;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.invitations-recent-profil {
+    border: 2px solid var(--blue);
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: center;
+    padding: 20px;
+    margin-bottom: 15px;
+}
+
+.invitations-recent-profil img {
+    height: 75px;
+    width: 75px;
+    margin-bottom: 10px;
+    font-size: 21px;
+}
+
+.invitations-recent-profil h5 {
+    margin: 10px 0px 0px 0px;
+    font-size: 18px;
+}
+
+.invitations-nouveau {
+    display: flex;
+    flex: auto;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.invitations-nouveau-profil {
+    border: 2px solid var(--blue);
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: center;
+    padding: 20px;
+    margin-bottom: 15px;
+}
+
+.invitations-nouveau-profil img {
+    height: 75px;
+    width: 75px;
+    margin-bottom: 10px;
+    font-size: 21px;
+}
+
+.invitations-nouveau-profil h5 {
+    margin: 10px 0px 0px 0px;
+    font-size: 18px;
+}
+
+.invitations-nouveau-profil h6 {
+    margin: 10px 0px 0px 0px;
+    font-size: 12px;
+}
+
+.invitations-nouveau-connecter {
+    color: var(--blue);
+    background-color: var(--white);
+    border: 1px solid var(--blue);
+    border-radius: 10px;
+    width: 100%;
+    height: 35px;
+    font-size: 17px;
+    font-weight: bold;
+    margin-top: 15px;
+}
+
+.invitations-nouveau-connecter:hover {
+    background-color: var(--light-blue);
+}
 
 .NomEntreprise {
    
