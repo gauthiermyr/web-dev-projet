@@ -57,6 +57,7 @@ body {
 }
 
 .container {
+    min-height:100vh;
     margin-top: 128px;
     width: min(90%, 1240px);
     margin-left: auto;
@@ -148,8 +149,6 @@ body {
     border: none;
 }
 
-.post-creation-box 
-
 /*
 /// Section post feed
 */
@@ -182,21 +181,6 @@ body {
     display: flex;
     justify-content: space-between;
 }
-/*
-/// Section post creation
-*/
-
-
-
-/*
-/// Section post feed
-*/
-
-
-
-/*
-/// Section Profil
-*/
 
 #nav-photo{
 position: absolute;
@@ -398,6 +382,7 @@ order: 0;
 flex-grow: 0;
 margin: 0px 10px;
 }
+
 #nav-Bas-de-Page{
 position: absolute;
 width: 100%;
@@ -405,9 +390,123 @@ width: 100%;
 height: 224px;
 left: 0px;
 top: 1806px;
-    
-background: #ACC5CF;
 
+background: #ACC5CF;
+}
+
+/*
+/// Section offre
+*/
+
+#post-offre-container{
+    position: absolute;
+    width: 393px;
+    height: 43px;
+    left: 258px;
+    top: 238px;
+
+    font-family: Amiko;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 32px;
+    line-height: 43px;
+    /* identical to box height */
+
+    color: #4498BB;
+}
+
+.post-offre{
+    position: absolute;
+    width: 141px;
+    height: 52px;
+    left: 535px;
+    top: 418px;
+}
+
+.offre-postuler{
+    position: absolute;
+    width: 151px;
+    height: 42px;
+    left: 555px;
+    top: 623px;
+}
+
+.clickable-valider1{
+    position: absolute;
+    width: 151px;
+    height: 42px;
+    left: 555px;
+    top: 623px;
+}
+
+.clickable-valider2{
+    position: absolute;
+    width: 121px;
+    height: 12px;
+    left: 620px;
+    top: 912px;
+
+    font-family: Alata;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 12px;
+    line-height: 150%;
+    /* or 18px */
+    color: #000000;
+}
+
+#contenu-offre1{
+    position: absolute;
+    width: 790px;
+    height: 21px;
+    left: calc(50% - 790px/2);
+    top: 860px;
+
+    font-family: Alef;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 150%;
+    /* identical to box height, or 21px */
+    color: #181818;
+}
+
+#titre-offre1{
+    position: absolute;
+    width: 141px;
+    height: 52px;
+    left: 565px;
+    top: 792px;
+}
+
+
+/*
+/// Section footer
+*/
+
+.footer{
+    bottom: 0;
+    width: 100%;
+    height: 200px;
+    display: flex;
+    background: #ACC5CF;
+    flex-direction: column;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.titre-site-adresse{
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+    color: #FFFFFF;
+}
+
+#CG{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #FFFFFF;
 }
 
 /*
@@ -650,13 +749,13 @@ color: #4498BB;
 }
 
 #nav-trait-separateur3{
-position: absolute;
-left: 0.11%;
-right: 0.09%;
-top: 100%;
-bottom: 0%;
+    position: absolute;
+    left: 0.11%;
+    right: 0.09%;
+    top: 100%;
+    bottom: 0%;
 
-border: 2px solid rgba(68, 152, 187, 0.33);
+    border: 2px solid rgba(68, 152, 187, 0.33);
 }
 
 #nav-block-contacts4{
@@ -667,12 +766,12 @@ height: 104.85px;
 left: 7.75px;
 top: 498.56px;
 
-
 flex: none;
 order: 4;
 flex-grow: 0;
 margin: 32px 0px;
 }
+
 #nav-Nom-Prenom4{
 position: absolute;
 left: 16.93%;
