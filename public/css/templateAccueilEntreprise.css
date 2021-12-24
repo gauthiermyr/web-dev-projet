@@ -1,0 +1,316 @@
+
+.container-Entreprise{
+position: absolute;
+width: 1693px;
+height: 1107px;
+left: 83px;
+top: 575px;
+
+}
+#nav-Block-messsage-liste{
+position: static;
+width: 400px;
+height: 108px;
+left: 83px;
+top: 675px;
+
+background: #C4C4C4;
+border-radius: 10px;
+}
+#nav-Block-liste{
+position: absolute;
+width: 651px;
+height: 56px;
+left: 59px;
+top: 30px;
+
+font-family: Amiko;
+font-style: normal;
+font-weight: normal;
+font-size: 24px;
+line-height: 32px;
+display: flex;
+align-items: center;
+text-align: center;
+
+color: #000000;
+}
+    
+
+#nav-collab-mot{
+position: absolute;
+width: 227px;
+height: 20px;
+left: 25px;
+top: 150px;
+
+font-family: Amiko;
+font-style: normal;
+font-weight: normal;
+font-size: 20px;
+line-height: 27px;
+text-transform: uppercase;
+
+color: #181818;
+
+}
+#nav-view-all{
+position: absolute;
+width: 141.64px;
+height: 19.91px;
+left: calc(50% - 141.64px/2 - 308.02px - 30px);
+top: 150px;
+
+font-family: Amiko;
+font-style: normal;
+font-weight: bold;
+font-size: 20px;
+line-height: 27px;
+text-align: right;
+text-transform: uppercase;
+
+color: #0275B1;   
+}
+
+
+
+
+/*
+/// Partie les block et rectangles contenant les différents collabateurs (travailleurs)
+*/
+
+
+#nav-block-collab1{
+
+position: absolute;
+width: 485.63px;
+height: 94.14px;
+left: 203.45px;
+top: 200px;
+}
+    
+#image1{
+position: absolute;
+width: 52px;
+height: 52px;
+left: 1px;
+top: 85px;
+border-radius: 26px;
+}
+
+#nav-Nom-collab1{
+position: absolute;
+width: 111px;
+height: 23.53px;
+left: 60px;
+top: 100px;
+
+font-family: Alef;
+font-style: normal;
+font-weight: bold;
+font-size: 14px;
+line-height: 19px;
+
+color: #181818;   
+}
+
+#Metier1{
+position: absolute;
+width: 111px;
+height: 27.15px;
+left: 60px;
+top: 115px;
+
+font-family: Aladin;
+font-style: normal;
+font-weight: normal;
+font-size: 10px;
+line-height: 150%;
+/* or 15px */
+
+
+color: #181818;
+}
+
+#nav-block-collab2{
+position: absolute;
+width: 318.18px;
+height: 91.14px;
+left: 203.45px;
+top: 300px;
+}
+    
+
+
+#nav-block-collab3{
+position: absolute;
+width: 318.18px;
+height: 91.14px;
+left: 203.45px;
+top: 400px;
+
+}
+    
+
+
+#Block-Offres{
+position: absolute;
+width: 400px;
+height: 108px;
+left: 1075px;
+top: 20px;
+
+background: #C4C4C4;
+border-radius: 10px;
+}
+
+#Block-emploi-nom{
+position: absolute;
+width: 439px;
+height: 35px;
+left: 1100px;
+top: 54px;
+
+font-family: Amiko;
+font-style: normal;
+font-weight: normal;
+font-size: 24px;
+line-height: 32px;
+display: flex;
+align-items: center;
+text-align: center;
+
+color: #000000;
+
+}
+
+#nav-Offres1{
+position: absolute;
+width: 463px;
+height: 93px;
+left: calc(50% - 463px/2 + 465.5px);
+top: calc(50% - 93px/2 - 261.5px);
+
+font-family: Amiko;
+font-style: normal;
+font-weight: normal;
+font-size: 12px;
+line-height: 16px;
+text-align: center;
+text-transform: uppercase;
+
+color: #4498BB;
+}
+
+#pos1{
+position: absolute;
+width: 156px;
+height: 41px;
+left: 1230px;
+top: 330px;
+
+background: #4498BB;
+border-radius: 15px;
+}
+
+#nav-ligne-blockOffres1{
+position: absolute;
+width: 463px;
+height: 0px;
+left: calc(50% - 463px/2 + 465.5px);
+top: 400px;
+
+border: 1px solid #4498BB;
+}
+
+#nav-Offres2{
+position: absolute;
+width: 463px;
+height: 93px;
+left: calc(50% - 463px/2 + 465.5px);
+top: calc(50% - 93px/2 - 32.5px);
+
+font-family: Amiko;
+font-style: normal;
+font-weight: normal;
+font-size: 12px;
+line-height: 16px;
+text-align: center;
+text-transform: uppercase;
+
+color: #4498BB;
+}
+
+#pos2{
+position: absolute;
+width: 156px;
+height: 41px;
+left: 1230px;
+top: 540px;
+
+background: #4498BB;
+border-radius: 15px;
+
+}
+
+#nav-ligne-blockOffres2{
+position: absolute;
+width: 463px;
+height: 0px;
+left: calc(50% - 463px/2 + 465.5px);
+top: 610px;
+
+border: 1px solid #4498BB;    
+}
+
+#nav-Offres3{
+position: absolute;
+width: 463px;
+height: 93px;
+left: calc(50% - 463px/2 + 465.5px);
+top: calc(50% - 93px/2 + 199.5px);
+
+font-family: Amiko;
+font-style: normal;
+font-weight: normal;
+font-size: 12px;
+line-height: 16px;
+text-align: center;
+text-transform: uppercase;
+
+color: #4498BB;
+}
+
+#pos3{
+position: absolute;
+width: 156px;
+height: 41px;
+left: 1230px;
+top: 750px;
+
+background: #4498BB;
+border-radius: 15px;
+
+}
+
+#nav-ligne-blockOffres3{
+position: absolute;
+width: 463px;
+height: 0px;
+left: calc(50% - 463px/2 + 465.5px);
+top: 820px;
+
+border: 1px solid #4498BB;  
+}
+
+#posS{
+position: absolute;
+width: 460.55px;
+height: 71px;
+left: calc(50% - 460.55px/2 + 0.27px);
+top: 1000px;
+
+background: linear-gradient(180deg, #4498BB 0%, #0E6795 100%);
+border-radius: 26px;
+}
+
