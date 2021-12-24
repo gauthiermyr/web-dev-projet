@@ -36,7 +36,6 @@
             </div>
         </div>
     </div>
-
 <?php
         include('src/dynamic/footer.php');
 ?>
