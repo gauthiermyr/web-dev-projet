@@ -8,6 +8,7 @@ function search() {
         alert("please enter a search query");
     }
 }
+
 (() => {
     //conde to execute on load
 })();
