@@ -21,7 +21,7 @@ if(isset($_SESSION['user'])){
             <div class="nav-element">
                 <img src="./public/img/LeankDingue.png"></img>
             </div>
-            <div class="nav-element">
+            <div class="nav-element nav-element-input">
                 <input id="input-nav-bar" type="text" placeholder="Recherche..."></input>
                 <button class="hover-translate" onclick="search()">Rechercher</button>
             </div>
@@ -51,15 +51,15 @@ else{
     <div class="navigation">
         <div id="nav-container">
             <div class="nav-element">
-                <img src="./public/img/LeankDingue.png"></img>
+                <a href="./"><img src="./public/img/LeankDingue.png"></img></a>
             </div>
-            <div class="nav-element">
+            <div class="nav-element nav-element-input">
                 <input id="input-nav-bar" type="text" placeholder="Recherche..."></input>
                 <button class="hover-translate" onclick="search()">Rechercher</button>
             </div>
             <div class="nav-element text-white">
-                <span onclick="alert('login')" class="clickable hover-translate">Login</span>
-                <span onclick="alert('register')" class="clickable hover-translate">Register</span>
+                <a href="./login.php" class="hover-translate">Login</a>
+                <a href="./register.php" class="hover-translate">Register</a>
             </div>
         </div>
     </div>
