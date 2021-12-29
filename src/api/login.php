@@ -13,11 +13,12 @@ if(isset($_POST['email']) && isset($_POST['password'])){
 //    $stmt->execute(array($email, $hashed_pwd));
     $stmt->execute(array($email, $pwd));
     $res = $stmt->fetchAll(PDO::FETCH_OBJ);
-    if(count($res) )
-    $succes = true;
-//    var_dump($res);
-    session_start();
-    $_SESSION['user'] = $res[0];
+
+    if(count($res)> 0) {
+        $succes = true;
+        session_start();
+        $_SESSION['user'] = $res[0];
+    }
 }
 
 echo json_encode(['success' => $succes]);
