@@ -106,6 +106,6 @@
         include('src/dynamic/footer.php');
     ?>
 
-    <script src="./public/js/main.js"></script>
+    <script src="./public/js/navigation.js"></script>
 </body>
 </html>

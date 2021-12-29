@@ -1,12 +1,13 @@
 // Global script
 
-function login() {
+function register() {
     const email = document.querySelector("#email-input").value.trim();
     const password = document.querySelector("#password-input").value.trim();
-    console.log(email, password);
+    const confPassword = document.querySelector("#conf-password-input").value.trim();
+    console.log(email, password, confPassword);
 
     if (email !== "" || password !== ""){
-        fetch("./src/api/login.php", {
+        fetch("./src/api/register.php", {
             method: 'POST',
             headers: {
                 'Accept': 'application/json',
