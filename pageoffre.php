@@ -3,6 +3,8 @@
 ?>
 
 <?php
+
+/*
 $Host    = "localhost";
 $user    = "root";
 $pass    = "";
@@ -11,9 +13,25 @@ $db_name = "siteweb";
 
 //create connection
 $connection = mysqli_connect($Host, $user, $pass, $db_name);
+*/
 
+$hostname="localhost";
+$username="root";
+$password="";
+$database="siteweb";
+$db = new PDO("mysql:dbname=". $database .";host=". $hostname .";charset=UTF8","". $username ."","". $password ."");
+
+$db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+$sth = $db->prepare("
+                  SELECT *
+                  FROM offresdemploie
+                  INNER JOIN entreprise ON offresdemploie.IDEntreprise = entreprise.IDEntreprise
+                ");
+$sth-> execute();
+$result = $sth->fetchAll(PDO::FETCH_ASSOC);
+/*
 //get results from database
-$result1 = mysqli_query($connection,"SELECT * FROM offresdemploie INNER JOIN entreprise ON entreprise.IDEntreprise = offresdemploie.IDEntreprise WHERE offresdemploie.IDOffre=1404355998");
+$result1 = mysqli_query($connection,"SELECT * FROM offresdemploie,entreprise WHERE entreprise.IDEntreprise = offresdemploie.IDEntreprise AND offresdemploie.IDOffre=1404355998");
 $result2 = mysqli_query($connection,"SELECT * FROM offresdemploie WHERE IDOffre=2");
 $result3 = mysqli_query($connection,"SELECT * FROM offresdemploie WHERE IDOffre=3");
 $result4 = mysqli_query($connection,"SELECT * FROM offresdemploie WHERE IDOffre=4");
@@ -75,7 +93,7 @@ foreach ($result as $result) {
       </div>
     </div>
 <?php              
-foreach ($result1 as $result) {
+foreach ($result as $result) {
 ?>
     <div class="row text-left mt-5">
       <div class="col-12 col-sm-8 col-md-4 col-lg-3 m-sm-auto mr-md-auto ml-md-0">
@@ -85,7 +103,7 @@ foreach ($result1 as $result) {
       </div>
 <?php
 }                  
-foreach ($result1 as $result) {
+foreach ($result as $result) {
 ?>
       <div class="col-12 col-sm-8 col-md-4 col-lg-3 m-sm-auto pt-5 pt-md-0">
         <img alt="image" class="img-fluid rounded" src="">
@@ -94,7 +112,7 @@ foreach ($result1 as $result) {
       </div>
 <?php
 }                 
-foreach ($result1 as $result) {
+foreach ($result as $result) {
 ?>
       <div class="col-12 col-sm-8 col-md-4 col-lg-3 m-sm-auto ml-md-auto mr-md-0 pt-5 pt-md-0">
         <img alt="image" class="img-fluid rounded" src="">
@@ -104,7 +122,7 @@ foreach ($result1 as $result) {
     </div>
 <?php
 }                  
-foreach ($result1 as $result) {
+foreach ($result as $result) {
 ?>
     <div class="row text-left mt-5">
       <div class="col-12 col-sm-8 col-md-4 col-lg-3 m-sm-auto mr-md-auto ml-md-0">
@@ -114,7 +132,7 @@ foreach ($result1 as $result) {
       </div>
 <?php
 }                  
-foreach ($result1 as $result) {
+foreach ($result as $result) {
 ?>
       <div class="col-12 col-sm-8 col-md-4 col-lg-3 m-sm-auto pt-5 pt-md-0">
         <img alt="image" class="img-fluid rounded" src="">
@@ -123,7 +141,7 @@ foreach ($result1 as $result) {
       </div>
 <?php
 }                  
-foreach ($result1 as $result) {
+foreach ($result as $result) {
 ?>
       <div class="col-12 col-sm-8 col-md-4 col-lg-3 m-sm-auto ml-md-auto mr-md-0 pt-5 pt-md-0">
         <img alt="image" class="img-fluid rounded" src="">
