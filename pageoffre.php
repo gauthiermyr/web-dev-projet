@@ -13,19 +13,23 @@ $db_name = "siteweb";
 
 //create connection
 $connection = mysqli_connect($Host, $user, $pass, $db_name);
-*/
+
 
 $hostname="localhost";
 $username="root";
 $password="";
 $database="siteweb";
 $db = new PDO("mysql:dbname=". $database .";host=". $hostname .";charset=UTF8","". $username ."","". $password ."");
+*/
+
+require('src/db/database.php');
 
 $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 $sth = $db->prepare("
                   SELECT *
                   FROM offresdemploie
                   INNER JOIN entreprise ON offresdemploie.IDEntreprise = entreprise.IDEntreprise
+                  WHERE IDOffre=1404355998
                 ");
 $sth-> execute();
 $result = $sth->fetchAll(PDO::FETCH_ASSOC);
@@ -40,8 +44,6 @@ $result6 = mysqli_query($connection,"SELECT * FROM offresdemploie WHERE IDOffre=
 
 $all_property = array();  //declare an array for saving property
 
-
-/*
 //showing property
 echo '<table class="data-table">
         <tr class="data-heading">';  //initialize table tag
@@ -83,83 +85,28 @@ foreach ($result as $result) {
 }
 */
 ?>
-
-<section class="fdb-block fp-active" data-block-type="features" data-id="2" draggable="true">
-  <div class="container">
-    <div class="row justify-content-center">
-      <div class="col-12 text-left">
-        <h1>Offre d'emploi</h1>
-        <p class="lead">Voici plusieurs offre d'emploi susceptible de vous interesser</p>
-      </div>
-    </div>
 <?php              
 foreach ($result as $result) {
 ?>
-    <div class="row text-left mt-5">
-      <div class="col-12 col-sm-8 col-md-4 col-lg-3 m-sm-auto mr-md-auto ml-md-0">
-        <img alt="image" class="img-fluid rounded" src="">
-        <h3><strong><?php echo $result['titre']; ?></strong></h3>
-        <p><?php echo $result['commentaire']; ?></p>
-      </div>
-<?php
-}                  
-foreach ($result as $result) {
-?>
-      <div class="col-12 col-sm-8 col-md-4 col-lg-3 m-sm-auto pt-5 pt-md-0">
-        <img alt="image" class="img-fluid rounded" src="">
-        <h3><strong><?php echo $result['titre']; ?></strong></h3>
-        <p><?php echo $result['commentaire']; ?></p>
-      </div>
-<?php
-}                 
-foreach ($result as $result) {
-?>
-      <div class="col-12 col-sm-8 col-md-4 col-lg-3 m-sm-auto ml-md-auto mr-md-0 pt-5 pt-md-0">
-        <img alt="image" class="img-fluid rounded" src="">
-        <h3><strong><?php echo $result['titre']; ?></strong></h3>
-        <p><?php echo $result['commentaire']; ?></p>
-      </div>
-    </div>
-<?php
-}                  
-foreach ($result as $result) {
-?>
-    <div class="row text-left mt-5">
-      <div class="col-12 col-sm-8 col-md-4 col-lg-3 m-sm-auto mr-md-auto ml-md-0">
-        <img alt="image" class="img-fluid rounded" src="">
-        <h3><strong><?php echo $result['titre']; ?></strong></h3>
-        <p><?php echo $result['commentaire']; ?></p>
-      </div>
-<?php
-}                  
-foreach ($result as $result) {
-?>
-      <div class="col-12 col-sm-8 col-md-4 col-lg-3 m-sm-auto pt-5 pt-md-0">
-        <img alt="image" class="img-fluid rounded" src="">
-        <h3><strong><?php echo $result['titre']; ?></strong></h3>
-        <p><?php echo $result['commentaire']; ?></p>
-      </div>
-<?php
-}                  
-foreach ($result as $result) {
-?>
-      <div class="col-12 col-sm-8 col-md-4 col-lg-3 m-sm-auto ml-md-auto mr-md-0 pt-5 pt-md-0">
-        <img alt="image" class="img-fluid rounded" src="">
-        <h3><strong><?php echo $result['titre']; ?></strong></h3>
-        <p><?php echo $result['commentaire']; ?></p>
-      </div>
-    </div>
-  </div>
-</section>
 
+<section class="fdb-block" data-block-type="contents" data-id="1" draggable="true">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-12-1">
+                <div class="col-12-2">
+                    <h1><?php echo $result['titre']; ?></h1>
+                    <p class="lead"><?php echo $result['commentaire']; ?></p>
+                    <p class="lead">salaire:<?php echo $result['Salaire']; ?></p>
+                </div>
+                <p><img class="img-fluid" src="<?php echo $result['Logo']; ?>"></p>
+            </div>
+        </div>
+    </div>
+</section>
 
 <?php
 }
 ?>
-
-
-
-    </div>
 
 <?php
         include('src/dynamic/footer.php');
