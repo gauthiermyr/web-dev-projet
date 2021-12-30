@@ -22,7 +22,7 @@ $database="siteweb";
 $db = new PDO("mysql:dbname=". $database .";host=". $hostname .";charset=UTF8","". $username ."","". $password ."");
 */
 
-require('src/db/database.php');
+require_once('src/db/database.php');
 
 $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 $sth = $db->prepare("
