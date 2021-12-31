@@ -2,33 +2,86 @@
         include('src/dynamic/header.php');
 ?>
 
-    <div class="container">
-        <div id="post-offre-container">
-            Voici les offres d'emploi:
-        </div>
-            <div class="post-offre">
-                <div>
-                    <img src="./public/img/profil.png"></img>
-                    <h4>Capgemini</h4>
-                    <h5>entreprise alpha</h5>
-                </div>
-            </div>
-            <div class="offre">
-                <input type="file" name="upload" id="upload-offre" accept="application/pdf" />
-                <div class="offre-postuler">
-                    <span onclick="alert('valider')" class="clickable-valider1">Apply</span>
-                    <p id="offre-pdf">offre.pdf</p>
-                    <p id="pdffile">pdf file</p>
-                </div>
+<?php
 
-                <span onclick="alert('valider')" class="clickable-valider2">Apply</span>
+include('src/db/database.php');
+
+$db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+$donne1 = $db->prepare("
+                  SELECT *
+                  FROM offresdemploie
+                  INNER JOIN entreprise ON offresdemploie.IDEntreprise = entreprise.IDEntreprise
+                  WHERE IDOffre=1404355998
+                ");
+$donne1-> execute();
+$result1 = $donne1->fetchAll(PDO::FETCH_ASSOC);
+
+$donne2 = $db->prepare("
+                  SELECT *
+                  FROM offresdemploie
+                  INNER JOIN entreprise ON offresdemploie.IDEntreprise = entreprise.IDEntreprise
+                  WHERE IDOffre=2
+                ");
+$donne2-> execute();
+$result2 = $donne2->fetchAll(PDO::FETCH_ASSOC);
+
+
+?>
+<?php              
+foreach ($result1 as $a) {
+?>
+
+<section class="fdb-block" data-block-type="contents" data-id="1" draggable="true">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-12-1">
+                <div class="col-12-2">
+                    <h1><?php echo $a['titre']; ?></h1>
+                    <p class="lead"><?php echo $a['commentaire']; ?></p>
+                    <p class="lead">salaire:<?php echo $a['Salaire']; ?></p>
+                </div>
+                <p><img class="img-fluid" src="<?php echo $a['Logo']; ?>"></p>
             </div>
         </div>
-        <div>
-            <p id="titre-offre1">Google, entreprise alpha</p>
-            <p id="contenu-offre1">offre pour stagière: blablabla</p>
+        <div class="postuler">
+            <input type="file" name="upload" id="upload-offre" accept="application/pdf" />
+            <span onclick="alert('valider')" class="upload-offre">Apply</span>
         </div>
     </div>
+    
+</section>
+
+<?php
+}
+?>
+
+<?php              
+foreach ($result2 as $b) {
+?>
+
+<section class="fdb-block" data-block-type="contents" data-id="1" draggable="true">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-12-1">
+                <div class="col-12-2">
+                    <h1><?php echo $b['titre']; ?></h1>
+                    <p class="lead"><?php echo $b['commentaire']; ?></p>
+                    <p class="lead">salaire:<?php echo $b['Salaire']; ?></p>
+                </div>
+                <p><img class="img-fluid" src="<?php echo $b['Logo']; ?>"></p>
+            </div>
+        </div>
+        <div class="postuler">
+            <input type="file" name="upload" id="upload-offre" accept="application/pdf" />
+            <span onclick="alert('valider')" class="upload-offre">Apply</span>
+        </div>
+    </div>
+    
+</section>
+
+<?php
+}
+?>
 
 <?php
         include('src/dynamic/footer.php');
