@@ -6,7 +6,7 @@
             <h2>Nouveau post ?</h2>
             <div class="post-creation-box">
                 <textarea id="post-creation-textarea" placeholder="Quelque chose à dire ..."></textarea>
-                <button>Publier</button>
+                <button onClick="publish()">Publier</button>
             </div>
         </div>
         <div id="post-feed">

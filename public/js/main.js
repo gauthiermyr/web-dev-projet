@@ -2,6 +2,7 @@ const postsDic = [
     {
         date: "01/12/2021 14h16",
         author: "Alpha 7",
+        srcPFP: "./public/img/profil.png",
         bio: "Full Stack",
         body: "Bonjour j'ai le plaisir de vous annoncer que je rejoins les équipes de LeankDingue !",
         likes: 189,
@@ -10,6 +11,7 @@ const postsDic = [
     {
         date: "01/12/2021 14h16",
         author: "Alpha 7",
+        srcPFP: "./public/img/profil.png",
         bio: "Full Stack",
         body: "Bonjour j'ai le plaisir de vous annoncer que je rejoins les équipes de LeankDingue !",
         likes: 189,
@@ -18,6 +20,7 @@ const postsDic = [
     {
         date: "01/12/2021 14h16",
         author: "Alpha 7",
+        srcPFP: "./public/img/profil.png",
         bio: "Full Stack",
         body: "Bonjour j'ai le plaisir de vous annoncer que je rejoins les équipes de LeankDingue !",
         likes: 189,
@@ -33,7 +36,7 @@ const postHTML = (postDic) => {
                     "<p>" + postDic.date + "</p>" +
                 "</div>" +
                 "<div class='post-navigation-profile'>" +
-                    "<img src='./public/img/profil.png'></img>" +
+                    "<img src='" + postDic.srcPFP + "'></img>" +
                     "<div class='post-navigation-profile-info'>" +
                         "<h4>" + postDic.author + "</h4>" +
                         "<h5>" + postDic.bio + "</h5>" +
@@ -64,6 +67,22 @@ const loadPosts = () => {
     postsDic.forEach((postDic) => {
         document.querySelector("#post-feed").insertAdjacentHTML("afterend", postHTML(postDic));
     });
+}
+
+const publish = () => {
+    if (document.querySelector("#post-creation-textarea").value.trim() != "") {
+        let formData = new FormData();
+        formData.append('post', document.querySelector("#post-creation-textarea").value);
+        fetch("./src/api/publishPost.php", {
+            method: 'POST',
+            body: formData
+        }).then((response) => {
+
+        });
+    }
+    else {
+        alert("please write a post");
+    }
 }
 
 (() => {
