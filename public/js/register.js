@@ -7,13 +7,13 @@ function register() {
     console.log(email, password, confPassword);
 
     if (email !== "" || password !== ""){
+        let formData = new FormData();
+        formData.append('email', email);
+        formData.append('password', password);
+
         fetch("./src/api/register.php", {
             method: 'POST',
-            headers: {
-                'Accept': 'application/json',
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify({email: email, password: password})
+            body: formData
         }).then((response) => {
             //console.log(JSON.stringify(response.json()));
         })

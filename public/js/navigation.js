@@ -1,11 +1,12 @@
 // Global script
 
 function search() {
+
     if (document.querySelector("#input-nav-bar")?.value.trim() != "") {
-        alert("searching for " + document.querySelector("#input-nav-bar")?.value + "...");
+        window.location = window.location.pathname + "?search=" + escape(document.querySelector("#input-nav-bar")?.value.trim());
     }
     else {
-        alert("please enter a search query");
+        // alert("please enter a search query");
     }
 }
 
