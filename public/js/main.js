@@ -1,3 +1,31 @@
+const postsDic = [
+    {
+        date: "01/12/2021 14h16",
+        author: "Alpha 7",
+        bio: "Full Stack",
+        body: "Bonjour j'ai le plaisir de vous annoncer que je rejoins les équipes de LeankDingue !",
+        likes: 189,
+        nb_comments: 17
+    },
+    {
+        date: "01/12/2021 14h16",
+        author: "Alpha 7",
+        srcPFP: "./public/img/profil.png",
+        bio: "Full Stack",
+        body: "Bonjour j'ai le plaisir de vous annoncer que je rejoins les équipes de LeankDingue !",
+        likes: 189,
+        nb_comments: 17
+    },
+    {
+        date: "01/12/2021 14h16",
+        author: "Alpha 7",
+        srcPFP: "./public/img/profil.png",
+        bio: "Full Stack",
+        body: "Bonjour j'ai le plaisir de vous annoncer que je rejoins les équipes de LeankDingue !",
+        likes: 189,
+        nb_comments: 17
+    },
+]
 
 const postHTML = (postDic) => {
     return (
@@ -7,7 +35,7 @@ const postHTML = (postDic) => {
                     "<p>" + postDic.DatePublication + "</p>" +
                 "</div>" +
                 "<div class='post-navigation-profile'>" +
-                    "<img src='" + 'test' + "'></img>" +
+                    "<img src='" + './public/img/profil.png' + "'></img>" +
                     "<div class='post-navigation-profile-info'>" +
                         "<h4>" + postDic.Prenom + ' ' + postDic.Nom + "</h4>" +
                         "<h5>" + postDic.Titre + "</h5>" +
