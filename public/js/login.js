@@ -5,17 +5,17 @@ function login() {
     const password = document.querySelector("#password-input").value.trim();
     console.log(email, password);
 
-    if (email !== "" || password !== ""){
-        let formData = new FormData();
-        formData.append('email', email);
-        formData.append('password', password);
-        fetch("./src/api/login.php", {
-            method: 'POST',
-            body: formData
-        }).then((response) => {
-            //console.log(JSON.stringify(response.json()));
-        })
-    }
+    // if (email !== "" || password !== ""){
+    //     let formData = new FormData();
+    //     formData.append('email', email);
+    //     formData.append('password', password);
+    //     fetch("./src/api/login.php", {
+    //         method: 'POST',
+    //         body: formData
+    //     }).then((response) => {
+    //         //console.log(JSON.stringify(response.json()));
+    //     })
+    // }
 }
 
 +

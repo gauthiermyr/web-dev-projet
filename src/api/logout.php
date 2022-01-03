@@ -1,5 +1,7 @@
 <?php
 
+$success = session_start();
 $success = session_destroy();
 if($success) $_SESSION = array();
-echo json_encode(['success' => $success]);
+header('Location: ../../index.php');
+

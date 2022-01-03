@@ -1,6 +1,6 @@
 <?php
 
-$succes = false;
+//$succes = false;
 
 require ('../db/database.php');
 
@@ -10,15 +10,17 @@ if(isset($_POST['email']) && isset($_POST['password'])){
     $hashed_pwd = hash('sha256', $pwd);
 
     $stmt = $db->prepare("SELECT * FROM utilisateurs where Email = ? and Password = ?");
-//    $stmt->execute(array($email, $hashed_pwd));
     $stmt->execute(array($email, $pwd));
     $res = $stmt->fetchAll(PDO::FETCH_OBJ);
 
     if(count($res)> 0) {
-        $succes = true;
-        session_start();
+        $succes = session_start();
         $_SESSION['user'] = $res[0];
+        if($succes){
+            header('Location: ../../index.php');
+
+        }
     }
 }
 
-echo json_encode(['success' => $succes]);
+//echo json_encode(['success' => $succes]);

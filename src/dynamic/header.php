@@ -1,5 +1,5 @@
 <?php
-
+session_start();
 if(isset($_SESSION['user'])){
     ////header connecté
     $user = $_SESSION['user'];
@@ -29,7 +29,7 @@ if(isset($_SESSION['user'])){
                 <span onclick="alert('Invitation')" class="clickable hover-translate">Invitation</span>
                 <span onclick="alert('Chat')" class="clickable hover-translate">Chat</span>
                 <span onclick="alert('Profil')" class="clickable hover-translate">Profile</span>
-                <span onclick="alert('Deconnexion')" class="clickable hover-translate">Deconnexion</span>
+                <span class="clickable hover-translate"><a href="src/api/logout.php">Déconnexion</a></span>
             </div>
         </div>
     </div>
