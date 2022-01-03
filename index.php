@@ -6,11 +6,11 @@
             <h2>Nouveau post ?</h2>
             <div class="post-creation-box">
                 <textarea id="post-creation-textarea" placeholder="Quelque chose à dire ..."></textarea>
-                <button>Publier</button>
+                <button onClick="publish()">Publier</button>
             </div>
         </div>
         <div id="post-feed">
-            <div class="post-container">
+            <!-- <div class="post-container">
                 <div class="post-navigation">
                     <div class="post-navigation-date">
                         <p>01/12/2021 14h16</p>
@@ -33,13 +33,14 @@
                     </div>
                     <span>share</span>
                 </div>
-            </div>
+            </div> -->
         </div>
     </div>
 <?php
         include('src/dynamic/footer.php');
 ?>
 
+    <script src="./public/js/navigation.js"></script>*
     <script src="./public/js/main.js"></script>
 </body>
 </html>

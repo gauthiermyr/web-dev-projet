@@ -38,6 +38,6 @@
             <p><a href="login.php">Se connecter</a></p>
         </div>
     </div>
-    <script src="./public/js/main.js"></script>
+    <script src="./public/js/navigation.js"></script>
 </body>
 </html>
