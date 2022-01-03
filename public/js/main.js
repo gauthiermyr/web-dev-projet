@@ -1,55 +1,26 @@
-const postsDic = [
-    {
-        date: "01/12/2021 14h16",
-        author: "Alpha 7",
-        srcPFP: "./public/img/profil.png",
-        bio: "Full Stack",
-        body: "Bonjour j'ai le plaisir de vous annoncer que je rejoins les équipes de LeankDingue !",
-        likes: 189,
-        nb_comments: 17
-    },
-    {
-        date: "01/12/2021 14h16",
-        author: "Alpha 7",
-        srcPFP: "./public/img/profil.png",
-        bio: "Full Stack",
-        body: "Bonjour j'ai le plaisir de vous annoncer que je rejoins les équipes de LeankDingue !",
-        likes: 189,
-        nb_comments: 17
-    },
-    {
-        date: "01/12/2021 14h16",
-        author: "Alpha 7",
-        srcPFP: "./public/img/profil.png",
-        bio: "Full Stack",
-        body: "Bonjour j'ai le plaisir de vous annoncer que je rejoins les équipes de LeankDingue !",
-        likes: 189,
-        nb_comments: 17
-    },
-]
 
 const postHTML = (postDic) => {
     return (
         "<div class='post-container'>" +
             "<div class='post-navigation'>" +
                 "<div class='post-navigation-date'>" +
-                    "<p>" + postDic.date + "</p>" +
+                    "<p>" + postDic.DatePublication + "</p>" +
                 "</div>" +
                 "<div class='post-navigation-profile'>" +
-                    "<img src='" + postDic.srcPFP + "'></img>" +
+                    "<img src='" + 'test' + "'></img>" +
                     "<div class='post-navigation-profile-info'>" +
-                        "<h4>" + postDic.author + "</h4>" +
-                        "<h5>" + postDic.bio + "</h5>" +
+                        "<h4>" + postDic.Prenom + ' ' + postDic.Nom + "</h4>" +
+                        "<h5>" + postDic.Titre + "</h5>" +
                     "</div>" +
                 "</div>" +
             "</div>" +
             "<div class='post-body'>" +
-                "<p>" + postDic.bio + "</p>" +
+                "<p>" + postDic.Commentaire + "</p>" +
             "</div>" +
             "<div class='post-footer'>" +
                 "<div>" +
-                    "<span>" + postDic.likes + " pouces</span>" +
-                    "<span>" + postDic.nb_comments + " commentaires</span>" +
+                    "<span>" + '69' + " pouces</span>" +
+                    "<span>" + '42' + " commentaires</span>" +
                 "</div>" +
                 "<span>share</span>" +
             "</div>" +
@@ -58,14 +29,14 @@ const postHTML = (postDic) => {
 }
 
 const loadPosts = () => {
-    // fetch("./src/api/getPosts.php", {
-    //     method: 'GET'
-    // }).then((response) => {
-    //     // get list of posts and load them like below
-    // });
-
-    postsDic.forEach((postDic) => {
-        document.querySelector("#post-feed").insertAdjacentHTML("afterend", postHTML(postDic));
+    fetch("./src/api/actus.php", {
+        method: 'GET'
+    }).then((response) => {
+        return response.json();
+    }).then((data) =>{
+        data.forEach((postDic) => {
+            document.querySelector("#post-feed").insertAdjacentHTML("afterend", postHTML(postDic));
+        });
     });
 }
 
