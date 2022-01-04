@@ -19,16 +19,16 @@ if(isset($_SESSION['user'])){
     <div class="navigation">
         <div id="nav-container">
             <div class="nav-element">
-                <img src="./public/img/LeankDingue.png"></img>
+            <a href="./"><img src="./public/img/LeankDingue.png"></img></a>
             </div>
             <div class="nav-element nav-element-input">
                 <input id="input-nav-bar" type="text" placeholder="Recherche..."></input>
                 <button class="hover-translate" onclick="search()">Rechercher</button>
             </div>
             <div class="nav-element text-white">
-                <span onclick="alert('Invitation')" class="clickable hover-translate">Invitation</span>
-                <span onclick="alert('Chat')" class="clickable hover-translate">Chat</span>
-                <span onclick="alert('Profil')" class="clickable hover-translate">Profile</span>
+                <a href="./invites.php"><span class="clickable hover-translate">Invitation</span></a>
+                <a href="./chat.php"><span class="clickable hover-translate">Chat</span></a>
+                <a href="./profile.php"><span class="clickable hover-translate">Profile</span></a>
                 <span class="clickable hover-translate"><a href="src/api/logout.php">Déconnexion</a></span>
             </div>
         </div>
