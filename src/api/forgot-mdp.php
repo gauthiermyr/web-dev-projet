@@ -26,7 +26,7 @@ if(isset($_POST['recup_submit'],$_POST['recup_mail'])) {
             $message = '
             <html>
             <head>
-            <title>Récupération de mot de passe - Votresite</title>
+            <title>Récupération de mot de passe - Leankdingue</title>
             <meta charset="utf-8" />
             </head>
             <body>

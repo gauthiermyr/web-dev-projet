@@ -48,19 +48,19 @@
         Un code de vérification vous a été envoyé par mail: <?= $_SESSION['recup_mail'] ?>
         <br/>
             <form method="post">
-                <input class="identification-write-input" type="text" placeholder="Code de vérification" name="verif_code"/><br/>
+                <input class="identification-write-input" type="text" placeholder="Code de vérification" name="verif_code"/><br/> <br/>
                 <input class="identification-valider-button clickable" type="submit" value="Valider" name="verif_submit"/>
             </form>
         <?php } elseif(isset($_GET["section"]) && $section == "changemdp") { ?>
         Nouveau mot de passe pour <?= $_SESSION['recup_mail'] ?>
             <form method="post">
-                <input class="identification-write-input" type="password" placeholder="Nouveau mot de passe" name="change_mdp"/><br/>
-                <input class="identification-write-input" type="password" placeholder="Confirmation du mot de passe" name="change_mdpc"/><br/>
+                <input class="identification-write-input" type="password" placeholder="Nouveau mot de passe" name="change_mdp"/><br/> <br/>
+                <input class="identification-write-input" type="password" placeholder="Confirmation du mot de passe" name="change_mdpc"/><br/> <br/>
                 <input class="identification-valider-button clickable" type="submit" value="Valider" name="change_submit"/>
             </form>
         <?php } else { ?>
             <form method="post">
-                <input class="identification-write-input" type="text" placeholder="E-mail" name="recup_mail"/><br/>
+                <input class="identification-write-input" type="text" placeholder="E-mail" name="recup_mail"/><br/><br/>
                 <input class="identification-valider-button clickable" type="submit" value="Changer mon mot de passe" name="recup_submit"/>
             </form>
         <?php } ?>
