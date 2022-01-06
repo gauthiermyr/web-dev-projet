@@ -1,3 +1,11 @@
+<?php
+    if (isset($_GET["section"])) {
+        $section=$_GET["section"];
+    } else{
+        $section=0;
+    }
+?>
+
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -35,14 +43,14 @@
             <button class="identification-valider-button clickable" name="oublie" onclick="">Changer mon mot de passe</button>
         </div>
 
-        <?php if($section == 'code') { ?>
+        <?php if(isset($_GET["section"]) && $section == 'code') { ?>
         Un code de vérification vous a été envoyé par mail: <?= $_SESSION['recup_mail'] ?>
         <br/>
             <form method="post">
                 <input type="text" placeholder="Code de vérification" name="verif_code"/><br/>
                 <input type="submit" value="Valider" name="verif_submit"/>
             </form>
-        <?php } elseif($section == "changemdp") { ?>
+        <?php } elseif(isset($_GET["section"]) && $section == "changemdp") { ?>
         Nouveau mot de passe pour <?= $_SESSION['recup_mail'] ?>
             <form method="post">
                 <input type="password" placeholder="Nouveau mot de passe" name="change_mdp"/><br/>
