@@ -3,20 +3,21 @@ function forgot() {
     const password = document.querySelector(".identification-valider-button clickable").value.trim();
     console.log(email, password);
 
-    // if (email !== "" || password !== ""){
-    //     let formData = new FormData();
-    //     formData.append('email', email);
-    //     formData.append('password', password);
-    //     fetch("./src/api/login.php", {
-    //         method: 'POST',
-    //         body: formData
-    //     }).then((response) => {
-    //         //console.log(JSON.stringify(response.json()));
-    //     })
-    // }
+    if (email !== "" || password !== ""){
+        let formData = new FormData();
+        formData.append('email', email);
+        formData.append('password', password);
+
+        fetch("./src/api/forgot-mdp.php", {
+            method: 'POST',
+            body: formData
+        }).then((response) => {
+            //console.log(JSON.stringify(response.json()));
+        })
+    }
 }
 
 +
 (() => {
-    //conde to execute on load
+    //code to execute on load
 })();
