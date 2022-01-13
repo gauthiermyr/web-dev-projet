@@ -8,12 +8,13 @@ if(isset($_POST['recup_submit'],$_POST['recup_mail'])) {
     if(!empty($_POST['recup_mail'])) {
         $recup_mail = htmlspecialchars($_POST['recup_mail']);
         if(filter_var($recup_mail,FILTER_VALIDATE_EMAIL)) {
-            $mailexist = $bd->prepare('SELECT id,User FROM utilisateurs WHERE Email = ?');
+            //echo($recup_mail); ok
+            $mailexist = $db->prepare("SELECT User FROM utilisateurs WHERE Email = ?");
             $mailexist->execute(array($recup_mail));
             $mailexist_count = $mailexist->rowCount();
             if($mailexist_count == 1) {
-                $pseudo = $mailexist->fetch();
-                $pseudo = $pseudo['pseudo'];
+                $User = $mailexist->fetch();
+                $User = $User['User'];
                 $_SESSION['recup_mail'] = $recup_mail;
                 $recup_code = "";
                 for($i=0; $i < 8; $i++) {
@@ -36,7 +37,7 @@ if(isset($_POST['recup_submit'],$_POST['recup_mail'])) {
                     <tr>
                     <td>
                         
-                        <div align="center">Bonjour <b>'.$pseudo.'</b>,</div>
+                        <div align="center">Bonjour <b>'.$User.'</b>,</div>
                         Voici votre code de récupération: <b>'.$recup_code.'</b>
                         A bientôt sur <a href="#">Votre site</a> !
                         
@@ -59,19 +60,22 @@ if(isset($_POST['recup_submit'],$_POST['recup_mail'])) {
                 header("Location:./forgot-mdp.php?section=code");
             } else {
                 $error = "Cette adresse mail n'est pas enregistrée";
+                echo($error);
             }
         } else {
             $error = "Adresse mail invalide";
+            echo($error);
         }
     } else {
         $error = "Veuillez entrer votre adresse mail";
+        echo($error);
     }
 }
 if(isset($_POST['verif_submit'],$_POST['verif_code'])) {
 if(!empty($_POST['verif_code'])) {
     $verif_code = htmlspecialchars($_POST['verif_code']);
     if($verif_req == $recup_code) {
-        $up_req = $bd->prepare('SELECT id,User FROM utilisateurs WHERE Email = ?');
+        $up_req = $db->prepare('SELECT id,User FROM utilisateurs WHERE Email = ?');
         $up_req->execute(array($_SESSION['recup_mail']));
         header('Location:./forgot-mdp.php?section=changemdp');
     } else {
@@ -83,7 +87,7 @@ if(!empty($_POST['verif_code'])) {
 }
 if(isset($_POST['change_submit'])) {
 if(isset($_POST['change_mdp'],$_POST['change_mdpc'])) {
-    $verif_confirme = $bd->prepare('SELECT confirme FROM recuperation WHERE mail = ?');
+    $verif_confirme = $db->prepare('SELECT confirme FROM recuperation WHERE mail = ?');
     $verif_confirme->execute(array($_SESSION['recup_mail']));
     $verif_confirme = $verif_confirme->fetch();
     $verif_confirme = $verif_confirme['confirme'];
@@ -93,7 +97,7 @@ if(isset($_POST['change_mdp'],$_POST['change_mdpc'])) {
         if(!empty($mdp) AND !empty($mdpc)) {
             if($mdp == $mdpc) {
             $mdp = sha1($mdp);
-            $ins_mdp = $bd->prepare('UPDATE membres SET motdepasse = ? WHERE mail = ?');
+            $ins_mdp = $db->prepare('UPDATE membres SET motdepasse = ? WHERE mail = ?');
             $ins_mdp->execute(array($mdp,$_SESSION['recup_mail']));
             header('Location:./login.php');
             } else {
