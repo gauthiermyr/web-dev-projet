@@ -72,5 +72,6 @@
         </div>
     </div>
     <script src="./public/js/navigation.js"></script>
+    <script src="./public/js/forgot-mdp.js"></script>
 </body>
 </html>
