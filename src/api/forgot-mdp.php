@@ -1,8 +1,9 @@
 <?php
 
 //$succes = false;
+session_start();
 
-require ('../db/database.php');
+require (__DIR__ . "/../db/database.php");
 
 if(isset($_POST['recup_submit'],$_POST['recup_mail'])) {
     if(!empty($_POST['recup_mail'])) {
@@ -18,46 +19,46 @@ if(isset($_POST['recup_submit'],$_POST['recup_mail'])) {
                 $_SESSION['recup_mail'] = $recup_mail;
                 $recup_code = "";
                 for($i=0; $i < 8; $i++) {
-                $recup_code .= mt_rand(0,9);
-                }
-            $header="MIME-Version: 1.0\r\n";
-            $header.='From:"[VOUS]"<votremail@mail.com>'."\n";
-            $header.='Content-Type:text/html; charset="utf-8"'."\n";
-            $header.='Content-Transfer-Encoding: 8bit';
-            $message = '
-            <html>
-            <head>
-            <title>Récupération de mot de passe - Leankdingue</title>
-            <meta charset="utf-8" />
-            </head>
-            <body>
-            <font color="#303030";>
-                <div align="center">
-                <table width="600px">
-                    <tr>
-                    <td>
-                        
-                        <div align="center">Bonjour <b>'.$User.'</b>,</div>
-                        Voici votre code de récupération: <b>'.$recup_code.'</b>
-                        A bientôt sur <a href="#">Votre site</a> !
-                        
-                    </td>
-                    </tr>
-                    <tr>
-                    <td align="center">
-                        <font size="2">
-                        Ceci est un email automatique, merci de ne pas y répondre
-                        </font>
-                    </td>
-                    </tr>
-                </table>
-                </div>
-            </font>
-            </body>
-            </html>
-            ';
-            mail($recup_mail, "Récupération de mot de passe - Votresite", $message, $header);
-                header("Location:./forgot-mdp.php?section=code");
+                    $recup_code .= mt_rand(0,9);
+                    }
+                $header="MIME-Version: 1.0\r\n";
+                $header.='From:"lilyan.bastien@gmail.com'."\n";
+                $header.='Content-Type:text/html; charset="utf-8"'."\n";
+                $header.='Content-Transfer-Encoding: 8bit';
+                $message = '
+                <html>
+                <head>
+                <title>Récupération de mot de passe - Leankdingue</title>
+                <meta charset="utf-8" />
+                </head>
+                <body>
+                <font color="#303030";>
+                    <div align="center">
+                    <table width="600px">
+                        <tr>
+                        <td>
+                            
+                            <div align="center">Bonjour <b>'.$User.'</b>,</div>
+                            Voici votre code de récupération: <b>'.$recup_code.'</b>
+                            A bientôt sur <a href="#">Leankdingue</a> !
+                            
+                        </td>
+                        </tr>
+                        <tr>
+                        <td align="center">
+                            <font size="2">
+                            Ceci est un email automatique, merci de ne pas y répondre
+                            </font>
+                        </td>
+                        </tr>
+                    </table>
+                    </div>
+                </font>
+                </body>
+                </html>
+                ';
+                mail($recup_mail, "Récupération de mot de passe - Leankdingue", $message, $header);
+                header("Location:../../forgot-mdp.php?section=code");
             } else {
                 $error = "Cette adresse mail n'est pas enregistrée";
                 echo($error);
@@ -99,7 +100,7 @@ if(isset($_POST['change_mdp'],$_POST['change_mdpc'])) {
             $mdp = sha1($mdp);
             $ins_mdp = $db->prepare('UPDATE membres SET motdepasse = ? WHERE mail = ?');
             $ins_mdp->execute(array($mdp,$_SESSION['recup_mail']));
-            header('Location:./login.php');
+            header('Location:../../login.php');
             } else {
             $error = "Vos mots de passes ne correspondent pas";
             }

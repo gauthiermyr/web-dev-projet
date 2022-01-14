@@ -1,4 +1,5 @@
 <?php
+    session_start();
     if (isset($_GET["section"])) {
         $section=$_GET["section"];
     } else{
@@ -45,7 +46,7 @@
         </div>
 */    ?>
         <?php if(isset($_GET["section"]) && $section == 'code') { ?>
-        Un code de vérification vous a été envoyé par mail: <?= $_SESSION['recup_mail'] ?>
+        Un code de vérification vous a été envoyé par mail: <?=$_SESSION['recup_mail'] ?>
         <br/>
             <form action="src/api/forgot-mdp.php" method="post">
                 <input class="identification-write-input" type="text" placeholder="Code de vérification" name="verif_code"/><br/> <br/>
