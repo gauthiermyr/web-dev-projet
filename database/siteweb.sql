@@ -270,9 +270,21 @@ CREATE TABLE IF NOT EXISTS `publicites` (
   FOREIGN KEY(IDUtilisateur) references utilisateurs(IDUtilisateur) ON DELETE CASCADE
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
-
 -- --------------------------------------------------------
 
+--
+-- Structure de la table `recuperation`
+--
+
+DROP TABLE IF EXISTS `recuperation`;
+CREATE TABLE IF NOT EXISTS `recuperation` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `mail` varchar(255) COLLATE utf8mb4_bin NOT NULL,
+  `code` int(11) NOT NULL,
+  `confirmer` int(11) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_bin;
+COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
