@@ -6,8 +6,6 @@ use PHPMailer\PHPMailer\PHPMailer;
 session_start();
 
 require (__DIR__ . "/../db/database.php");
-$usernamemail = $config['usernamemail'];
-$passwordmail = $config['passwordmail'];
 
 if(isset($_POST['recup_submit'],$_POST['recup_mail'])) {
     if(!empty($_POST['recup_mail'])) {
@@ -65,6 +63,8 @@ if(isset($_POST['recup_submit'],$_POST['recup_mail'])) {
                 $mail->isSMTP();
                 $mail->Host = "smtp.gmail.com";
                 $mail->SMTPAuth = true;
+                $usernamemail = $config['usernamemail'];
+                $passwordmail = $config['passwordmail'];
                 $mail->Username = $usernamemail;
                 $mail->Password = $passwordmail;
                 $mail->Port = 465;
@@ -77,18 +77,6 @@ if(isset($_POST['recup_submit'],$_POST['recup_mail'])) {
                 $mail->Subject = ($header);
                 $mail->Body = $message;
                 $mail->send();
-                /* if($mail->send()){
-                    $status = "success";
-                    $response = "Email is sent!";
-                }
-                else
-                {
-                    $status = "failed";
-                    $response = "Something is wrong: <br>" . $mail->ErrorInfo;
-                }
-
-                exit(json_encode(array("status" => $status, "response" => $response))); */
-                
                 $mail_recup_exist = $db->prepare('SELECT id FROM recuperation WHERE mail = ?');
                 $mail_recup_exist->execute(array($recup_mail));
                 $mail_recup_exist = $mail_recup_exist->rowCount();
@@ -98,8 +86,8 @@ if(isset($_POST['recup_submit'],$_POST['recup_mail'])) {
                     header("Location:../../forgot-mdp.php?section=code");
                     } 
                 else {
-                    $recup_insert = $db->prepare('INSERT INTO recuperation(mail,code) VALUES (?, ?)');
-                    $recup_insert->execute(array($recup_mail,$recup_code));
+                    $recup_insert = $db->prepare('INSERT INTO recuperation(mail,code,confirmer) VALUES (?,?,?)');
+                    $recup_insert->execute(array($recup_mail,$recup_code,"1"));
                     header("Location:../../forgot-mdp.php?section=code");
                     }
             } else {

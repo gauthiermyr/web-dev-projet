@@ -37,14 +37,6 @@
             <h2>Mot de passe oublié</h2>
             <p>Insérez votre e-mail pour recevoir un nouveau mot de passe.</p>
         </div>
-<?php /* 
-        <div class="identification-write">
-            <input class="identification-write-input" type="text" placeholder="E-mail" name="mail"></input>
-        </div>
-        <div class="identification-valider">
-            <button class="identification-valider-button clickable" name="oublie" onclick="">Changer mon mot de passe</button>
-        </div>
-*/    ?>
         <?php if(isset($_GET["section"]) && $section == 'code') { ?>
         Un code de vérification vous a été envoyé par mail: <?=$_SESSION['recup_mail'] ?>
         <br/>
