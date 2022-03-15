@@ -270,9 +270,21 @@ CREATE TABLE IF NOT EXISTS `publicites` (
   FOREIGN KEY(IDUtilisateur) references utilisateurs(IDUtilisateur) ON DELETE CASCADE
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
-
 -- --------------------------------------------------------
 
+--
+-- Structure de la table `recuperation`
+--
+
+DROP TABLE IF EXISTS `recuperation`;
+CREATE TABLE IF NOT EXISTS `recuperation` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `mail` varchar(255) COLLATE utf8mb4_bin NOT NULL,
+  `code` int(11) NOT NULL,
+  `confirmer` int(11) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_bin;
+COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
@@ -289,7 +301,7 @@ INSERT INTO typedutilisateurs VALUES (4,"Utilisateur Admin");
 
 -- peuplement de la table utilisateurs
 
-INSERT INTO utilisateurs VALUES (119347424,"DESGROISILLES","ABDARAHIM","1947-01-18","ABDARAHIM DESGROISILLES","ABDARAHIM100966241","ABDARAHIM.DESGROISILLES@devinci.fr",NULL,0614041024,1,"NULL");
+INSERT INTO utilisateurs VALUES (119347424,"bastien","lilyan","2000-01-27","lilyanb","test","touslestests1@gmail.com",NULL,0614041024,1,"NULL");
 INSERT INTO utilisateurs VALUES (211768189,"H14","Null","1966-11-21","Null H14","Null148253465","Null.H14@gmail.com",NULL,0655358888,2,"NULL");
 INSERT INTO utilisateurs VALUES (2140049,"BATINOR N?1 NEW","Null","1966-03-18","Null BATINOR N?1 NEW","Null67355862","Null.BATINOR N?1 NEW@gmail.com",NULL,0653062189,4,"NULL");
 INSERT INTO utilisateurs VALUES (214948594,"SOLEIL DE L'YSSANDONNAIS","Null","1933-06-24","Null SOLEIL DE L'YSSANDONNAIS","Null76793765","Null.SOLEIL DE L'YSSANDONNAIS@gmail.com",NULL,0646695787,2,"NULL");

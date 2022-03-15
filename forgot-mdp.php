@@ -1,3 +1,12 @@
+<?php
+    session_start();
+    if (isset($_GET["section"])) {
+        $section=$_GET["section"];
+    } else{
+        $section=0;
+    }
+?>
+
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -28,16 +37,34 @@
             <h2>Mot de passe oublié</h2>
             <p>Insérez votre e-mail pour recevoir un nouveau mot de passe.</p>
         </div>
-        <div class="identification-write">
-            <input class="identification-write-input" type="text" placeholder="E-mail"></input>
-        </div>
-        <div class="identification-valider">
-            <button class="identification-valider-button clickable" onclick="">Changer mon mot de passe</button>
-        </div>
+        <?php if(isset($_GET["section"]) && $section == 'code') { ?>
+        Un code de vérification vous a été envoyé par mail: <?=$_SESSION['recup_mail'] ?>
+        <br/>
+            <form action="src/api/forgot-mdp.php" method="post">
+                <input class="identification-write-input" type="text" placeholder="Code de vérification" name="verif_code"/><br/> <br/>
+                <input class="identification-valider-button clickable" type="submit" value="Valider" name="verif_submit"/>
+            </form>
+        <?php } elseif(isset($_GET["section"]) && $section == "changemdp") { ?>
+        Nouveau mot de passe pour <?= $_SESSION['recup_mail'] ?>
+            <form action="src/api/forgot-mdp.php" method="post">
+                <input class="identification-write-input" type="password" placeholder="Nouveau mot de passe" name="change_mdp"/><br/> <br/>
+                <input class="identification-write-input" type="password" placeholder="Confirmation du mot de passe" name="change_mdpc"/><br/> <br/>
+                <input class="identification-valider-button clickable" type="submit" value="Valider" name="change_submit"/>
+            </form>
+        <?php } else { ?>
+            <form action="src/api/forgot-mdp.php" method="post">
+                <input class="identification-write-input" type="text" placeholder="E-mail" name="recup_mail"/><br/><br/>
+                <input class="identification-valider-button clickable" type="submit" value="Changer mon mot de passe" name="recup_submit"/>
+            </form>
+        <?php } ?>
+        <?php if(isset($error)) { echo '<span style="color:red">'.$error.'</span>'; } else { echo ""; } ?>
+
+
         <div class="identification-changer clickable">
             <p><a href="login.php">Se connecter</a></p>
         </div>
     </div>
     <script src="./public/js/navigation.js"></script>
+    <script src="./public/js/forgot-mdp.js"></script>
 </body>
 </html>
