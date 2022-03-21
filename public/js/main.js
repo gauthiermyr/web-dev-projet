@@ -68,22 +68,6 @@ const loadPosts = () => {
     });
 }
 
-const publish = () => {
-    if (document.querySelector("#post-creation-textarea").value.trim() != "") {
-        let formData = new FormData();
-        formData.append('post', document.querySelector("#post-creation-textarea").value);
-        fetch("./src/api/publishPost.php", {
-            method: 'POST',
-            body: formData
-        }).then((response) => {
-
-        });
-    }
-    else {
-        alert("please write a post");
-    }
-}
-
 (() => {
     loadPosts();
 })();
