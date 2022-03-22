@@ -21,10 +21,10 @@ if(isset($_SESSION['user'])){
             <div class="nav-element">
                 <img src="./public/img/LeankDingue.png"></img>
             </div>
-            <div class="nav-element nav-element-input">
-                <input id="input-nav-bar" type="text" placeholder="Recherche..."></input>
-                <button class="hover-translate" onclick="search()">Rechercher</button>
-            </div>
+            <form method="get" action="./" class="nav-element nav-element-input">
+                <input name="filter" id="input-nav-bar" type="text" placeholder="Recherche..."></input>
+                <button class="hover-translate" onclick="">Rechercher</button>
+            </form>
             <div class="nav-element text-white">
                 <span onclick="alert('Invitation')" class="clickable hover-translate">Invitation</span>
                 <span onclick="alert('Chat')" class="clickable hover-translate">Chat</span>
@@ -53,10 +53,10 @@ else{
             <div class="nav-element">
                 <a href="./"><img src="./public/img/LeankDingue.png"></img></a>
             </div>
-            <div class="nav-element nav-element-input">
-                <input id="input-nav-bar" type="text" placeholder="Recherche..."></input>
-                <button class="hover-translate" onclick="search()">Rechercher</button>
-            </div>
+            <form method="get" action="./" class="nav-element nav-element-input">
+                <input name="filter" id="input-nav-bar" type="text" placeholder="Recherche..."></input>
+                <button class="hover-translate" onclick="">Rechercher</button>
+            </form>
             <div class="nav-element text-white">
                 <a href="./login.php" class="hover-translate">Login</a>
                 <a href="./register.php" class="hover-translate">Register</a>
