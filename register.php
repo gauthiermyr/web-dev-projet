@@ -1,26 +1,43 @@
 <?php
-        include('src/dynamic/header.php');
+include('src/dynamic/header.php');
+require ('./src/db/database.php');
+
+
+if(isset($_POST['email']) && isset($_POST['password']) && isset($_POST['name']) && isset($_POST['prenom'])){
+    $email = $_POST['email'];
+    $pwd = $_POST['password']; //TODO hash $pwd
+    $prenom = $_POST['prenom'];
+    $nom = $_POST['name'];
+
+    $date = date("Y-m-d");
+    $stmt = $db->prepare( "INSERT INTO utilisateurs VALUES (?,?,?,?,?,?,?,NULL,0600000000,1,NULL)");
+    $res = $stmt->execute(array(rand(0,9999999),$nom, $prenom,$date,$nom.$prenom,$pwd,$email));
+    header('Location: ./login.php');
+}
 ?>
-    <div class="identification">
+    <form class="identification" method="post" action="./register.php">
         <div class="identification-titre">
             <h2>Créer un compte</h2>
         </div>
         <div class="identification-write">
-            <input id="email-input" class="identification-write-input" type="text" placeholder="E-mail"></input>
+            <input name="email" id="email-input" class="identification-write-input" type="text" placeholder="E-mail"></input>
         </div>
         <div class="identification-write clickable">
-            <input id="password-input" class="identification-write-input" type="text" placeholder="Mot de passe"></input>
+            <input type="password" name="password" id="password-input" class="identification-write-input" type="text" placeholder="Mot de passe"></input>
         </div>
         <div class="identification-write clickable">
-            <input id="conf-password-input" class="identification-write-input" type="text" placeholder="Valider le mot de passe"></input>
+            <input name="name" id="conf-password-input" class="identification-write-input" type="text" placeholder="Nom"></input>
+        </div>
+        <div class="identification-write clickable">
+            <input name="prenom" id="conf-password-input" class="identification-write-input" type="text" placeholder="Prénom"></input>
         </div>
         <div class="identification-valider">
-            <button class="identification-valider-button clickable" onclick="register()">Créer un compte</button>
+            <button class="identification-valider-button clickable" >Créer un compte</button>
         </div>
         <div class="identification-changer clickable">
             <p><a href="./login.php">Se connecter</a></p>
         </div>
-    </div>
+    </form>
     <script src="./public/js/navigation.js"></script>
 
     <?php
